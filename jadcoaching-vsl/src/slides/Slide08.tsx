@@ -56,7 +56,6 @@ export const Slide08: React.FC = () => {
             fontWeight: 700,
             color: theme.colors.textWhite,
             textAlign: 'center',
-            textShadow: theme.shadows.textGlow,
           }}
         >
           <span style={{ color: theme.colors.primary }}>Jad</span>, Diplômé{' '}
