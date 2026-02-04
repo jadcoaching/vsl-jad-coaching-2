@@ -1,20 +1,10 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, staticFile, Img } from 'remotion';
+import { AbsoluteFill } from 'remotion';
 import { SlideWrapper } from '../components/SlideWrapper';
 import { AnimatedText } from '../components/AnimatedText';
 import { theme } from '../styles/theme';
 
 export const Slide08: React.FC = () => {
-  const frame = useCurrentFrame();
-
-  const photoScale = interpolate(frame, [0, 30], [0.8, 1], {
-    extrapolateRight: 'clamp',
-  });
-
-  const photoOpacity = interpolate(frame, [0, 20], [0, 1], {
-    extrapolateRight: 'clamp',
-  });
-
   return (
     <SlideWrapper variant="uniform">
       <AbsoluteFill
@@ -25,31 +15,8 @@ export const Slide08: React.FC = () => {
           alignItems: 'center',
         }}
       >
-        {/* Profile photo */}
-        <div
-          style={{
-            width: 240,
-            height: 240,
-            opacity: photoOpacity,
-            transform: `scale(${photoScale})`,
-            overflow: 'hidden',
-            borderRadius: '50%',
-            marginBottom: 40,
-          }}
-        >
-          <Img
-            src={staticFile('images/jad-profile.jpg')}
-            alt="Jad"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          />
-        </div>
-
         <AnimatedText
-          delay={15}
+          delay={0}
           animation="fadeUp"
           style={{
             fontSize: 110,
@@ -64,14 +31,14 @@ export const Slide08: React.FC = () => {
         </AnimatedText>
 
         <AnimatedText
-          delay={30}
+          delay={20}
           animation="fadeUp"
           style={{
             fontSize: 48,
             fontWeight: 400,
             color: theme.colors.textGray,
             textAlign: 'center',
-            marginTop: 25,
+            marginTop: 30,
           }}
         >
           Mathématiques •{' '}
