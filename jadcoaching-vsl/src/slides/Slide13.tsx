@@ -9,6 +9,7 @@ export const Slide13: React.FC = () => {
       school="Unidistance"
       beforeGrade="2.5/6"
       afterGrade="5.5/6"
+      photo="elisa-pucci.jpg"
     />
   );
 };

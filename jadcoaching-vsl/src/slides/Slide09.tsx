@@ -21,7 +21,7 @@ export const Slide09: React.FC = () => {
   const universities = ['EPFL', 'HEC', 'EHL', 'HEG', 'HEIG', 'UNIL', 'UNIGE', 'etc.'];
 
   return (
-    <SlideWrapper variant="blue">
+    <SlideWrapper variant="soft">
       <AbsoluteFill
         style={{
           display: 'flex',

@@ -8,6 +8,7 @@ export const Slide14: React.FC = () => {
       name="Val Garnier"
       school="ESC UNIL"
       afterGrade="6/6"
+      photo="val-garnier.jpg"
     />
   );
 };

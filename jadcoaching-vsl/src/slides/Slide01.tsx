@@ -8,7 +8,7 @@ export const Slide01: React.FC = () => {
   const universities = ['EPFL', 'HEC', 'EHL', 'HEG', 'HEIG', 'HSG', 'UNIVERSITÉ'];
 
   return (
-    <SlideWrapper variant="blue">
+    <SlideWrapper variant="soft">
       <AbsoluteFill
         style={{
           display: 'flex',

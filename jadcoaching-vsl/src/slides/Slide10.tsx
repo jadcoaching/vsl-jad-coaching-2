@@ -9,6 +9,7 @@ export const Slide10: React.FC = () => {
       school="HEC Lausanne"
       beforeGrade="2/6"
       afterGrade="5.5/6"
+      photo="lou-zahnd.jpg"
     />
   );
 };

@@ -7,7 +7,7 @@ import { theme } from '../styles/theme';
 
 export const Slide03: React.FC = () => {
   return (
-    <SlideWrapper variant="blue">
+    <SlideWrapper variant="dark">
       <AbsoluteFill
         style={{
           display: 'flex',

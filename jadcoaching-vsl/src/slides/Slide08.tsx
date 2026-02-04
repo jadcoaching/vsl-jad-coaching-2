@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Img, staticFile } from 'remotion';
 import { SlideWrapper } from '../components/SlideWrapper';
 import { AnimatedText } from '../components/AnimatedText';
 import { theme } from '../styles/theme';
@@ -16,7 +16,7 @@ export const Slide08: React.FC = () => {
   });
 
   return (
-    <SlideWrapper variant="default">
+    <SlideWrapper variant="uniform">
       <AbsoluteFill
         style={{
           display: 'flex',
@@ -27,7 +27,7 @@ export const Slide08: React.FC = () => {
           gap: 100,
         }}
       >
-        {/* Profile circle placeholder */}
+        {/* Profile circle - photo placeholder */}
         <div
           style={{
             position: 'relative',
@@ -52,15 +52,22 @@ export const Slide08: React.FC = () => {
               inset: 15,
               borderRadius: '50%',
               background: `linear-gradient(135deg, ${theme.colors.mediumGray} 0%, ${theme.colors.darkGray} 100%)`,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: 120,
-              fontWeight: 700,
-              color: theme.colors.primary,
+              overflow: 'hidden',
             }}
           >
-            J
+            {/* Photo placeholder - will show gradient if no photo */}
+            <Img
+              src={staticFile('images/jad-profile.jpg')}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
+              onError={(e) => {
+                // Hide image if not found
+                (e.target as HTMLImageElement).style.display = 'none';
+              }}
+            />
           </div>
         </div>
 

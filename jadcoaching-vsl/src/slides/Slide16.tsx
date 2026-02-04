@@ -8,20 +8,14 @@ import { theme } from '../styles/theme';
 export const Slide16: React.FC = () => {
   const frame = useCurrentFrame();
 
-  const buttonScale = interpolate(
-    Math.sin(frame / 15),
-    [-1, 1],
-    [1, 1.05]
-  );
-
   const arrowBounce = interpolate(
     Math.sin(frame / 10),
     [-1, 1],
-    [-5, 5]
+    [-8, 8]
   );
 
   return (
-    <SlideWrapper variant="blue">
+    <SlideWrapper variant="soft">
       <AbsoluteFill
         style={{
           display: 'flex',
@@ -56,50 +50,27 @@ export const Slide16: React.FC = () => {
           delay={35}
           animation="fadeIn"
           style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 15,
             fontSize: 32,
             fontWeight: 400,
             color: theme.colors.textGray,
             textAlign: 'center',
-            marginBottom: 60,
           }}
         >
-          Ça ne t'engage à rien • Lien en description
-        </AnimatedText>
-
-        <AnimatedText
-          delay={50}
-          animation="scaleIn"
-        >
-          <div
+          <span>Ça ne t'engage à rien • Lien en description</span>
+          <span
             style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 20,
-              padding: '24px 60px',
-              background: `linear-gradient(135deg, ${theme.colors.primary} 0%, ${theme.colors.primaryDark} 100%)`,
-              borderRadius: 60,
-              transform: `scale(${buttonScale})`,
-              boxShadow: `0 0 40px rgba(0, 207, 255, 0.6), 0 10px 40px rgba(0, 0, 0, 0.4)`,
+              fontSize: 40,
+              color: theme.colors.primary,
+              textShadow: theme.shadows.textGlow,
+              transform: `translateY(${arrowBounce}px)`,
+              display: 'inline-block',
             }}
           >
-            <span
-              style={{
-                fontSize: 36,
-                fontWeight: 700,
-                color: theme.colors.black,
-              }}
-            >
-              RÉSERVER MAINTENANT
-            </span>
-            <span
-              style={{
-                fontSize: 36,
-                transform: `translateX(${arrowBounce}px)`,
-              }}
-            >
-              ↓
-            </span>
-          </div>
+            ↓
+          </span>
         </AnimatedText>
       </AbsoluteFill>
     </SlideWrapper>

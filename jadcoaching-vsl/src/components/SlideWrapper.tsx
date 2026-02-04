@@ -5,7 +5,7 @@ import { VIDEO_CONFIG } from '../styles/theme';
 
 interface SlideWrapperProps {
   children: React.ReactNode;
-  variant?: 'default' | 'blue' | 'dark' | 'testimonial';
+  variant?: 'default' | 'soft' | 'dark' | 'testimonial' | 'uniform';
   grainIntensity?: number;
 }
 

@@ -14,7 +14,7 @@ export const Slide02: React.FC = () => {
   );
 
   return (
-    <SlideWrapper variant="default">
+    <SlideWrapper variant="soft">
       <AbsoluteFill
         style={{
           display: 'flex',

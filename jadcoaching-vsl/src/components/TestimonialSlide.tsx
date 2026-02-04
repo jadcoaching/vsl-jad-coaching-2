@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Img, staticFile } from 'remotion';
 import { SlideWrapper } from './SlideWrapper';
 import { AnimatedText } from './AnimatedText';
 import { theme } from '../styles/theme';
@@ -10,6 +10,7 @@ interface TestimonialSlideProps {
   school: string;
   beforeGrade?: string;
   afterGrade?: string;
+  photo?: string; // filename in public/images folder
 }
 
 export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
@@ -18,10 +19,15 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
   school,
   beforeGrade,
   afterGrade,
+  photo,
 }) => {
   const frame = useCurrentFrame();
 
-  const quoteMarkOpacity = interpolate(frame, [0, 30], [0, 0.1], {
+  const quoteMarkOpacity = interpolate(frame, [0, 30], [0, 0.08], {
+    extrapolateRight: 'clamp',
+  });
+
+  const photoScale = interpolate(frame, [40, 55], [0.8, 1], {
     extrapolateRight: 'clamp',
   });
 
@@ -101,14 +107,14 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
           delay={15}
           animation="fadeUp"
           style={{
-            fontSize: 36,
+            fontSize: 34,
             fontWeight: 400,
             color: theme.colors.textWhite,
             textAlign: 'center',
             lineHeight: 1.6,
-            maxWidth: 1200,
+            maxWidth: 1100,
             fontStyle: 'italic',
-            marginBottom: 60,
+            marginBottom: 50,
           }}
         >
           "{quote}"
@@ -127,20 +133,40 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
         >
           <div
             style={{
-              width: 60,
-              height: 60,
+              width: 80,
+              height: 80,
               borderRadius: '50%',
-              background: `linear-gradient(135deg, ${theme.colors.primary} 0%, ${theme.colors.primaryDark} 100%)`,
+              border: `3px solid ${theme.colors.primary}`,
+              boxShadow: theme.shadows.boxGlow,
+              overflow: 'hidden',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: 24,
-              fontWeight: 700,
-              color: theme.colors.black,
               marginBottom: 10,
+              transform: `scale(${photoScale})`,
+              background: photo ? 'transparent' : `linear-gradient(135deg, ${theme.colors.primary} 0%, ${theme.colors.primaryDark} 100%)`,
             }}
           >
-            {name.charAt(0)}
+            {photo ? (
+              <Img
+                src={staticFile(`images/${photo}`)}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                }}
+              />
+            ) : (
+              <span
+                style={{
+                  fontSize: 32,
+                  fontWeight: 700,
+                  color: theme.colors.black,
+                }}
+              >
+                {name.charAt(0)}
+              </span>
+            )}
           </div>
           <div
             style={{
