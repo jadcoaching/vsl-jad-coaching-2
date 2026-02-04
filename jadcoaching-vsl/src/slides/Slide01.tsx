@@ -1,0 +1,69 @@
+import React from 'react';
+import { AbsoluteFill } from 'remotion';
+import { SlideWrapper } from '../components/SlideWrapper';
+import { AnimatedText } from '../components/AnimatedText';
+import { theme } from '../styles/theme';
+
+export const Slide01: React.FC = () => {
+  const universities = ['EPFL', 'HEC', 'EHL', 'HEG', 'HEIG', 'HSG', 'UNIVERSITÉ'];
+
+  return (
+    <SlideWrapper variant="blue">
+      <AbsoluteFill
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: 80,
+        }}
+      >
+        <AnimatedText
+          delay={0}
+          animation="fadeUp"
+          style={{
+            fontSize: 72,
+            fontWeight: 600,
+            color: theme.colors.textWhite,
+            textAlign: 'center',
+            marginBottom: 20,
+          }}
+        >
+          Tu es étudiant en Suisse ?
+        </AnimatedText>
+
+        <AnimatedText
+          delay={20}
+          animation="fadeIn"
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 20,
+            marginTop: 50,
+          }}
+        >
+          {universities.map((uni, index) => (
+            <AnimatedText
+              key={uni}
+              delay={30 + index * 5}
+              animation="scaleIn"
+              style={{
+                fontSize: 28,
+                fontWeight: 500,
+                color: theme.colors.primary,
+                padding: '12px 28px',
+                border: `2px solid ${theme.colors.primary}`,
+                borderRadius: 50,
+                background: 'rgba(0, 207, 255, 0.1)',
+                boxShadow: theme.shadows.boxGlow,
+              }}
+            >
+              {uni}
+            </AnimatedText>
+          ))}
+        </AnimatedText>
+      </AbsoluteFill>
+    </SlideWrapper>
+  );
+};

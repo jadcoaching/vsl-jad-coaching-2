@@ -1,0 +1,26 @@
+{
+  "name": "jadcoaching-vsl",
+  "version": "1.0.0",
+  "description": "JadCoaching VSL Video - Remotion",
+  "main": "index.js",
+  "scripts": {
+    "start": "remotion studio",
+    "build": "remotion render JadCoachingVSL out/video.mp4",
+    "upgrade": "remotion upgrade",
+    "render": "remotion render JadCoachingVSL",
+    "preview": "remotion preview"
+  },
+  "keywords": ["remotion", "video", "vsl", "jadcoaching"],
+  "author": "JadCoaching",
+  "license": "ISC",
+  "dependencies": {
+    "@remotion/bundler": "^4.0.417",
+    "@remotion/cli": "^4.0.417",
+    "@types/react": "^19.2.11",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.417",
+    "typescript": "^5.9.3"
+  }
+}
