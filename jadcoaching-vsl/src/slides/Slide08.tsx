@@ -28,13 +28,13 @@ export const Slide08: React.FC = () => {
         {/* Profile photo */}
         <div
           style={{
-            width: 260,
-            height: 260,
+            width: 240,
+            height: 240,
             opacity: photoOpacity,
             transform: `scale(${photoScale})`,
             overflow: 'hidden',
             borderRadius: '50%',
-            marginBottom: 50,
+            marginBottom: 40,
           }}
         >
           <Img
@@ -56,6 +56,7 @@ export const Slide08: React.FC = () => {
             fontWeight: 700,
             color: theme.colors.textWhite,
             textAlign: 'center',
+            textShadow: '0 0 30px rgba(0, 207, 255, 0.4)',
           }}
         >
           <span style={{ color: theme.colors.primary }}>Jad</span>, Diplômé{' '}
@@ -70,7 +71,7 @@ export const Slide08: React.FC = () => {
             fontWeight: 400,
             color: theme.colors.textGray,
             textAlign: 'center',
-            marginTop: 30,
+            marginTop: 25,
           }}
         >
           Mathématiques •{' '}

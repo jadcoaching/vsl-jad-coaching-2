@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, staticFile, Img } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
 import { SlideWrapper } from './SlideWrapper';
 import { AnimatedText } from './AnimatedText';
 import { theme } from '../styles/theme';
@@ -10,7 +10,7 @@ interface TestimonialSlideProps {
   school: string;
   beforeGrade?: string;
   afterGrade?: string;
-  photo?: string; // filename in public/images folder
+  photo?: string; // kept for future use
 }
 
 export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
@@ -19,19 +19,10 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
   school,
   beforeGrade,
   afterGrade,
-  photo,
 }) => {
   const frame = useCurrentFrame();
 
   const quoteMarkOpacity = interpolate(frame, [0, 30], [0, 0.08], {
-    extrapolateRight: 'clamp',
-  });
-
-  const photoScale = interpolate(frame, [40, 55], [0.8, 1], {
-    extrapolateRight: 'clamp',
-  });
-
-  const photoOpacity = interpolate(frame, [40, 55], [0, 1], {
     extrapolateRight: 'clamp',
   });
 
@@ -124,7 +115,7 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
           "{quote}"
         </AnimatedText>
 
-        {/* Author */}
+        {/* Author - without photo */}
         <AnimatedText
           delay={50}
           animation="fadeIn"
@@ -135,30 +126,6 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
             gap: 10,
           }}
         >
-          {/* Photo - using staticFile for proper Remotion loading */}
-          {photo && (
-            <div
-              style={{
-                width: 100,
-                height: 100,
-                marginBottom: 15,
-                transform: `scale(${photoScale})`,
-                opacity: photoOpacity,
-                overflow: 'hidden',
-                borderRadius: '50%',
-              }}
-            >
-              <Img
-                src={staticFile(`images/${photo}`)}
-                alt={name}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              />
-            </div>
-          )}
           <div
             style={{
               fontSize: 32,

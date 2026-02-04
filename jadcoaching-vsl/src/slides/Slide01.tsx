@@ -33,20 +33,34 @@ export const Slide01: React.FC = () => {
         </AnimatedText>
 
         <AnimatedText
-          delay={20}
+          delay={15}
+          animation="fadeIn"
+          style={{
+            fontSize: 32,
+            fontWeight: 400,
+            color: theme.colors.primary,
+            textAlign: 'center',
+            marginBottom: 40,
+          }}
+        >
+          Universités & Hautes Écoles suisses
+        </AnimatedText>
+
+        <AnimatedText
+          delay={25}
           animation="fadeIn"
           style={{
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'center',
             gap: 20,
-            marginTop: 50,
+            marginTop: 20,
           }}
         >
           {universities.map((uni, index) => (
             <AnimatedText
               key={uni}
-              delay={30 + index * 5}
+              delay={35 + index * 5}
               animation="scaleIn"
               style={{
                 fontSize: 28,
