@@ -4,8 +4,8 @@ export const theme = {
     primary: '#00CFFF', // HSL: 191, 100%, 50%
     primaryDark: '#00A3CC',
     primaryLight: '#33D9FF',
-    black: '#000000',
-    darkGray: '#0A0A0A',
+    black: '#080a0f',
+    darkGray: '#0a0c12',
     mediumGray: '#1A1A1A',
     lightGray: '#2A2A2A',
     textWhite: '#FFFFFF',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, staticFile, Img } from 'remotion';
 import { SlideWrapper } from './SlideWrapper';
 import { AnimatedText } from './AnimatedText';
 import { theme } from '../styles/theme';
@@ -135,7 +135,7 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
             gap: 10,
           }}
         >
-          {/* Photo without circle - just the image */}
+          {/* Photo - using staticFile for proper Remotion loading */}
           {photo && (
             <div
               style={{
@@ -148,8 +148,8 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
                 borderRadius: '50%',
               }}
             >
-              <img
-                src={`/images/${photo}`}
+              <Img
+                src={staticFile(`images/${photo}`)}
                 alt={name}
                 style={{
                   width: '100%',

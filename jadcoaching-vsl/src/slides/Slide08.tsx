@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, staticFile, Img } from 'remotion';
 import { SlideWrapper } from '../components/SlideWrapper';
 import { AnimatedText } from '../components/AnimatedText';
 import { theme } from '../styles/theme';
@@ -20,26 +20,26 @@ export const Slide08: React.FC = () => {
       <AbsoluteFill
         style={{
           display: 'flex',
-          flexDirection: 'row',
+          flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
           padding: 100,
-          gap: 100,
+          gap: 50,
         }}
       >
         {/* Profile photo - no circle border */}
         <div
           style={{
-            width: 320,
-            height: 320,
+            width: 280,
+            height: 280,
             opacity: photoOpacity,
             transform: `scale(${photoScale})`,
             overflow: 'hidden',
             borderRadius: '50%',
           }}
         >
-          <img
-            src="/images/jad-profile.jpg"
+          <Img
+            src={staticFile('images/jad-profile.jpg')}
             alt="Jad"
             style={{
               width: '100%',
@@ -53,16 +53,18 @@ export const Slide08: React.FC = () => {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 30,
+            alignItems: 'center',
+            gap: 25,
           }}
         >
           <AnimatedText
             delay={15}
-            animation="slideRight"
+            animation="fadeUp"
             style={{
-              fontSize: 72,
+              fontSize: 90,
               fontWeight: 700,
               color: theme.colors.textWhite,
+              textAlign: 'center',
             }}
           >
             <span style={{ color: theme.colors.primary }}>Jad</span>, Diplômé{' '}
@@ -73,9 +75,10 @@ export const Slide08: React.FC = () => {
             delay={30}
             animation="fadeUp"
             style={{
-              fontSize: 40,
+              fontSize: 44,
               fontWeight: 400,
               color: theme.colors.textGray,
+              textAlign: 'center',
             }}
           >
             Mathématiques •{' '}
