@@ -101,12 +101,9 @@ export const Slide09: React.FC = () => {
               animation="scaleIn"
               style={{
                 fontSize: 22,
-                fontWeight: 500,
+                fontWeight: 600,
                 color: theme.colors.primary,
-                padding: '8px 20px',
-                border: `1px solid ${theme.colors.primary}`,
-                borderRadius: 30,
-                background: 'rgba(0, 207, 255, 0.1)',
+                padding: '6px 12px',
               }}
             >
               {uni}

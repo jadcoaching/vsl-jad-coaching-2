@@ -64,13 +64,9 @@ export const Slide01: React.FC = () => {
               animation="scaleIn"
               style={{
                 fontSize: 28,
-                fontWeight: 500,
+                fontWeight: 600,
                 color: theme.colors.primary,
-                padding: '12px 28px',
-                border: `2px solid ${theme.colors.primary}`,
-                borderRadius: 50,
-                background: 'rgba(0, 207, 255, 0.1)',
-                boxShadow: theme.shadows.boxGlow,
+                padding: '8px 16px',
               }}
             >
               {uni}
