@@ -23,19 +23,18 @@ export const Slide08: React.FC = () => {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          padding: 100,
-          gap: 50,
         }}
       >
-        {/* Profile photo - no circle border */}
+        {/* Profile photo */}
         <div
           style={{
-            width: 280,
-            height: 280,
+            width: 260,
+            height: 260,
             opacity: photoOpacity,
             transform: `scale(${photoScale})`,
             overflow: 'hidden',
             borderRadius: '50%',
+            marginBottom: 50,
           }}
         >
           <Img
@@ -49,44 +48,37 @@ export const Slide08: React.FC = () => {
           />
         </div>
 
-        <div
+        <AnimatedText
+          delay={15}
+          animation="fadeUp"
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: 25,
+            fontSize: 110,
+            fontWeight: 700,
+            color: theme.colors.textWhite,
+            textAlign: 'center',
+            textShadow: theme.shadows.textGlow,
           }}
         >
-          <AnimatedText
-            delay={15}
-            animation="fadeUp"
-            style={{
-              fontSize: 90,
-              fontWeight: 700,
-              color: theme.colors.textWhite,
-              textAlign: 'center',
-            }}
-          >
-            <span style={{ color: theme.colors.primary }}>Jad</span>, Diplômé{' '}
-            <span style={{ color: theme.colors.primary }}>EPFL</span>
-          </AnimatedText>
+          <span style={{ color: theme.colors.primary }}>Jad</span>, Diplômé{' '}
+          <span style={{ color: theme.colors.primary }}>EPFL</span>
+        </AnimatedText>
 
-          <AnimatedText
-            delay={30}
-            animation="fadeUp"
-            style={{
-              fontSize: 44,
-              fontWeight: 400,
-              color: theme.colors.textGray,
-              textAlign: 'center',
-            }}
-          >
-            Mathématiques •{' '}
-            <span style={{ color: theme.colors.primary, fontWeight: 600 }}>
-              +10ans d'expérience
-            </span>
-          </AnimatedText>
-        </div>
+        <AnimatedText
+          delay={30}
+          animation="fadeUp"
+          style={{
+            fontSize: 48,
+            fontWeight: 400,
+            color: theme.colors.textGray,
+            textAlign: 'center',
+            marginTop: 30,
+          }}
+        >
+          Mathématiques •{' '}
+          <span style={{ color: theme.colors.primary, fontWeight: 600 }}>
+            +10ans d'expérience
+          </span>
+        </AnimatedText>
       </AbsoluteFill>
     </SlideWrapper>
   );
