@@ -38,9 +38,9 @@ export const Slide01: React.FC = () => {
           style={{
             fontSize: 32,
             fontWeight: 400,
-            color: theme.colors.primary,
+            color: theme.colors.textGray,
             textAlign: 'center',
-            marginBottom: 40,
+            marginBottom: 15,
           }}
         >
           Universités & Hautes Écoles suisses
@@ -54,7 +54,7 @@ export const Slide01: React.FC = () => {
             flexWrap: 'wrap',
             justifyContent: 'center',
             gap: 20,
-            marginTop: 20,
+            marginTop: 0,
           }}
         >
           {universities.map((uni, index) => (
