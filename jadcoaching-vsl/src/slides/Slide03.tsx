@@ -20,7 +20,7 @@ export const Slide03: React.FC = () => {
         <AnimatedText delay={0} animation="fadeIn">
           <div
             style={{
-              fontSize: 32,
+              fontSize: 42,
               fontWeight: 400,
               color: theme.colors.textGray,
               textAlign: 'center',
@@ -34,7 +34,7 @@ export const Slide03: React.FC = () => {
         </AnimatedText>
 
         <AnimatedText delay={10} animation="scaleIn">
-          <Logo size="large" animated={false} />
+          <Logo size="xlarge" animated={false} />
         </AnimatedText>
 
         <AnimatedText

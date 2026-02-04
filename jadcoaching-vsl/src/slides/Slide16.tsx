@@ -26,7 +26,7 @@ export const Slide16: React.FC = () => {
         }}
       >
         <AnimatedText delay={0} animation="scaleIn">
-          <Logo size="medium" animated={false} />
+          <Logo size="large" animated={false} />
         </AnimatedText>
 
         <AnimatedText

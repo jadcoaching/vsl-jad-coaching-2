@@ -3,7 +3,7 @@ import { useCurrentFrame, interpolate, spring, useVideoConfig } from 'remotion';
 import { theme } from '../styles/theme';
 
 interface LogoProps {
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large' | 'xlarge';
   animated?: boolean;
   delay?: number;
 }
@@ -34,8 +34,9 @@ export const Logo: React.FC<LogoProps> = ({
 
   const sizeMap = {
     small: { fontSize: 24, padding: '8px 16px' },
-    medium: { fontSize: 36, padding: '12px 24px' },
-    large: { fontSize: 48, padding: '16px 32px' },
+    medium: { fontSize: 48, padding: '12px 24px' },
+    large: { fontSize: 72, padding: '16px 32px' },
+    xlarge: { fontSize: 100, padding: '20px 40px' },
   };
 
   const { fontSize, padding } = sizeMap[size];
