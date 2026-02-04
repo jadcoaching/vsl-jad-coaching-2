@@ -1,18 +1,10 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
+import { AbsoluteFill } from 'remotion';
 import { SlideWrapper } from '../components/SlideWrapper';
 import { AnimatedText } from '../components/AnimatedText';
 import { theme } from '../styles/theme';
 
 export const Slide02: React.FC = () => {
-  const frame = useCurrentFrame();
-
-  const glowIntensity = interpolate(
-    Math.sin(frame / 20),
-    [-1, 1],
-    [0.4, 0.8]
-  );
-
   return (
     <SlideWrapper variant="soft">
       <AbsoluteFill
@@ -36,7 +28,8 @@ export const Slide02: React.FC = () => {
             lineHeight: 1.3,
           }}
         >
-          Je veux te faire réussir
+          Je veux te faire{' '}
+          <span style={{ color: theme.colors.primary }}>réussir</span>
           <br />
           ton prochain examen
         </AnimatedText>
@@ -44,13 +37,11 @@ export const Slide02: React.FC = () => {
         <AnimatedText
           delay={25}
           animation="scaleIn"
-          glow
           style={{
             fontSize: 56,
             fontWeight: 700,
             color: theme.colors.primary,
             textAlign: 'center',
-            textShadow: `0 0 ${40 * glowIntensity}px rgba(0, 207, 255, ${glowIntensity}), 0 0 ${80 * glowIntensity}px rgba(0, 207, 255, ${glowIntensity * 0.5})`,
           }}
         >
           Mathématiques et statistiques
