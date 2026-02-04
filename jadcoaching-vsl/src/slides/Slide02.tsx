@@ -28,7 +28,7 @@ export const Slide02: React.FC = () => {
             lineHeight: 1.3,
           }}
         >
-          Je veux te faire{' '}
+          Je vais te faire{' '}
           <span style={{ color: theme.colors.primary }}>réussir</span>
           <br />
           ton prochain examen

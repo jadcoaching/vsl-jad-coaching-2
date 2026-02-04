@@ -10,6 +10,7 @@ interface TestimonialSlideProps {
   school: string;
   beforeGrade?: string;
   afterGrade?: string;
+  highlight?: string; // Custom highlight text in blue (e.g., "Excellentes notes")
   photo?: string; // kept for future use
 }
 
@@ -19,12 +20,17 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
   school,
   beforeGrade,
   afterGrade,
+  highlight,
 }) => {
   const frame = useCurrentFrame();
 
   const quoteMarkOpacity = interpolate(frame, [0, 30], [0, 0.08], {
     extrapolateRight: 'clamp',
   });
+
+  // Show highlight if provided, or afterGrade alone, or both grades
+  const showHighlight = highlight || (afterGrade && !beforeGrade);
+  const showGrades = beforeGrade && afterGrade;
 
   return (
     <SlideWrapper variant="testimonial">
@@ -53,8 +59,25 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
           "
         </div>
 
-        {/* Grades display */}
-        {beforeGrade && afterGrade && (
+        {/* Highlight text (custom or single grade) */}
+        {showHighlight && (
+          <AnimatedText
+            delay={0}
+            animation="fadeIn"
+            style={{
+              fontSize: 64,
+              fontWeight: 700,
+              color: theme.colors.primary,
+              textShadow: theme.shadows.textGlow,
+              marginBottom: 40,
+            }}
+          >
+            {highlight || afterGrade}
+          </AnimatedText>
+        )}
+
+        {/* Grades display (before → after) */}
+        {showGrades && (
           <AnimatedText
             delay={0}
             animation="fadeIn"
