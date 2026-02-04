@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Img, staticFile } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
 import { SlideWrapper } from '../components/SlideWrapper';
 import { AnimatedText } from '../components/AnimatedText';
 import { theme } from '../styles/theme';
@@ -7,11 +7,11 @@ import { theme } from '../styles/theme';
 export const Slide08: React.FC = () => {
   const frame = useCurrentFrame();
 
-  const ringScale = interpolate(frame, [0, 30], [0.8, 1], {
+  const photoScale = interpolate(frame, [0, 30], [0.8, 1], {
     extrapolateRight: 'clamp',
   });
 
-  const ringOpacity = interpolate(frame, [0, 20], [0, 1], {
+  const photoOpacity = interpolate(frame, [0, 20], [0, 1], {
     extrapolateRight: 'clamp',
   });
 
@@ -27,48 +27,26 @@ export const Slide08: React.FC = () => {
           gap: 100,
         }}
       >
-        {/* Profile circle - photo placeholder */}
+        {/* Profile photo - no circle border */}
         <div
           style={{
-            position: 'relative',
-            width: 350,
-            height: 350,
-            opacity: ringOpacity,
-            transform: `scale(${ringScale})`,
+            width: 320,
+            height: 320,
+            opacity: photoOpacity,
+            transform: `scale(${photoScale})`,
+            overflow: 'hidden',
+            borderRadius: '50%',
           }}
         >
-          <div
+          <img
+            src="/images/jad-profile.jpg"
+            alt="Jad"
             style={{
-              position: 'absolute',
-              inset: 0,
-              borderRadius: '50%',
-              border: `4px solid ${theme.colors.primary}`,
-              boxShadow: theme.shadows.boxGlow,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
             }}
           />
-          <div
-            style={{
-              position: 'absolute',
-              inset: 15,
-              borderRadius: '50%',
-              background: `linear-gradient(135deg, ${theme.colors.mediumGray} 0%, ${theme.colors.darkGray} 100%)`,
-              overflow: 'hidden',
-            }}
-          >
-            {/* Photo placeholder - will show gradient if no photo */}
-            <Img
-              src={staticFile('images/jad-profile.jpg')}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-              }}
-              onError={(e) => {
-                // Hide image if not found
-                (e.target as HTMLImageElement).style.display = 'none';
-              }}
-            />
-          </div>
         </div>
 
         <div

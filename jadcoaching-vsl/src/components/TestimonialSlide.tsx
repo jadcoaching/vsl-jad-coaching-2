@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, Img, staticFile } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
 import { SlideWrapper } from './SlideWrapper';
 import { AnimatedText } from './AnimatedText';
 import { theme } from '../styles/theme';
@@ -28,6 +28,10 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
   });
 
   const photoScale = interpolate(frame, [40, 55], [0.8, 1], {
+    extrapolateRight: 'clamp',
+  });
+
+  const photoOpacity = interpolate(frame, [40, 55], [0, 1], {
     extrapolateRight: 'clamp',
   });
 
@@ -131,43 +135,30 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
             gap: 10,
           }}
         >
-          <div
-            style={{
-              width: 80,
-              height: 80,
-              borderRadius: '50%',
-              border: `3px solid ${theme.colors.primary}`,
-              boxShadow: theme.shadows.boxGlow,
-              overflow: 'hidden',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              marginBottom: 10,
-              transform: `scale(${photoScale})`,
-              background: photo ? 'transparent' : `linear-gradient(135deg, ${theme.colors.primary} 0%, ${theme.colors.primaryDark} 100%)`,
-            }}
-          >
-            {photo ? (
-              <Img
-                src={staticFile(`images/${photo}`)}
+          {/* Photo without circle - just the image */}
+          {photo && (
+            <div
+              style={{
+                width: 100,
+                height: 100,
+                marginBottom: 15,
+                transform: `scale(${photoScale})`,
+                opacity: photoOpacity,
+                overflow: 'hidden',
+                borderRadius: '50%',
+              }}
+            >
+              <img
+                src={`/images/${photo}`}
+                alt={name}
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
                 }}
               />
-            ) : (
-              <span
-                style={{
-                  fontSize: 32,
-                  fontWeight: 700,
-                  color: theme.colors.black,
-                }}
-              >
-                {name.charAt(0)}
-              </span>
-            )}
-          </div>
+            </div>
+          )}
           <div
             style={{
               fontSize: 32,

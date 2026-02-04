@@ -22,28 +22,27 @@ import {
 import { theme } from './styles/theme';
 
 // Slide durations in frames (at 30fps)
-// Short slides: 3 seconds = 90 frames
-// Medium slides: 4 seconds = 120 frames
-// Testimonial slides: 6 seconds = 180 frames
-// CTA: 5 seconds = 150 frames
+// 20 seconds per slide = 600 frames
+
+const SLIDE_DURATION = 600; // 20 seconds at 30fps
 
 const SLIDE_CONFIG = [
-  { component: Slide01, duration: 120 },    // Tu es étudiant en Suisse ?
-  { component: Slide02, duration: 120 },    // Je veux te faire réussir
-  { component: Slide03, duration: 100 },    // Comment ça fonctionne ?
-  { component: Slide04, duration: 110 },    // #1 Débloque les concepts
-  { component: Slide05, duration: 110 },    // #2 Développe une méthode
-  { component: Slide06, duration: 110 },    // #3 Travaille sur ce qui tombe
-  { component: Slide07, duration: 100 },    // Comment je peux te promettre
-  { component: Slide08, duration: 120 },    // Jad, Diplômé EPFL
-  { component: Slide09, duration: 150 },    // Plus de 1254 étudiants
-  { component: Slide10, duration: 180 },    // Témoignage Lou
-  { component: Slide11, duration: 180 },    // Témoignage Stan
-  { component: Slide12, duration: 150 },    // Témoignage Alexis
-  { component: Slide13, duration: 180 },    // Témoignage Elisa
-  { component: Slide14, duration: 150 },    // Témoignage Val
-  { component: Slide15, duration: 130 },    // Ce qui fait échouer
-  { component: Slide16, duration: 150 },    // Réserve ton appel
+  { component: Slide01, duration: SLIDE_DURATION },    // Tu es étudiant en Suisse ?
+  { component: Slide02, duration: SLIDE_DURATION },    // Je veux te faire réussir
+  { component: Slide03, duration: SLIDE_DURATION },    // Comment ça fonctionne ?
+  { component: Slide04, duration: SLIDE_DURATION },    // #1 Débloque les concepts
+  { component: Slide05, duration: SLIDE_DURATION },    // #2 Développe une méthode
+  { component: Slide06, duration: SLIDE_DURATION },    // #3 Travaille sur ce qui tombe
+  { component: Slide07, duration: SLIDE_DURATION },    // Comment je peux te promettre
+  { component: Slide08, duration: SLIDE_DURATION },    // Jad, Diplômé EPFL
+  { component: Slide09, duration: SLIDE_DURATION },    // Plus de 1254 étudiants
+  { component: Slide10, duration: SLIDE_DURATION },    // Témoignage Lou
+  { component: Slide11, duration: SLIDE_DURATION },    // Témoignage Stan
+  { component: Slide12, duration: SLIDE_DURATION },    // Témoignage Alexis
+  { component: Slide13, duration: SLIDE_DURATION },    // Témoignage Elisa
+  { component: Slide14, duration: SLIDE_DURATION },    // Témoignage Val
+  { component: Slide15, duration: SLIDE_DURATION },    // Ce qui fait échouer
+  { component: Slide16, duration: SLIDE_DURATION },    // Réserve ton appel
 ];
 
 export const JadCoachingVSL: React.FC = () => {
