@@ -28,7 +28,7 @@ export const Slide02: React.FC = () => {
           delay={0}
           animation="fadeUp"
           style={{
-            fontSize: 64,
+            fontSize: 90,
             fontWeight: 600,
             color: theme.colors.textWhite,
             textAlign: 'center',
