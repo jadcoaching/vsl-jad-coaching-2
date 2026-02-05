@@ -38,8 +38,8 @@ export const Slide02: React.FC = () => {
           delay={25}
           animation="scaleIn"
           style={{
-            fontSize: 56,
-            fontWeight: 700,
+            fontSize: 48,
+            fontWeight: 400,
             color: theme.colors.textGray,
             textAlign: 'center',
           }}
