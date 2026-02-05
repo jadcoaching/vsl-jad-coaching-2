@@ -43,22 +43,6 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
           padding: 120,
         }}
       >
-        {/* Quote marks background */}
-        <div
-          style={{
-            position: 'absolute',
-            left: 100,
-            top: 150,
-            fontSize: 400,
-            fontWeight: 800,
-            color: theme.colors.primary,
-            opacity: quoteMarkOpacity,
-            fontFamily: 'Georgia, serif',
-          }}
-        >
-          "
-        </div>
-
         {/* Highlight text (custom or single grade) */}
         {showHighlight && (
           <AnimatedText

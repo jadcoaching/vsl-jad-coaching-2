@@ -43,7 +43,7 @@ export const Slide08: React.FC = () => {
         >
           Mathématiques •{' '}
           <span style={{ color: theme.colors.primary, fontWeight: 600 }}>
-            +10ans d'expérience
+            +10 ans d'expérience
           </span>
         </AnimatedText>
       </AbsoluteFill>

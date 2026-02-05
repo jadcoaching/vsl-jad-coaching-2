@@ -47,21 +47,6 @@ export const Slide07: React.FC = () => {
           </span>
         </AnimatedText>
 
-        <div
-          style={{
-            position: 'absolute',
-            right: 150,
-            top: '50%',
-            transform: 'translateY(-50%)',
-            fontSize: 300,
-            fontWeight: 800,
-            color: theme.colors.primary,
-            opacity: questionMarkOpacity * 0.15,
-            textShadow: theme.shadows.textGlow,
-          }}
-        >
-          ?
-        </div>
       </AbsoluteFill>
     </SlideWrapper>
   );
