@@ -40,7 +40,7 @@ export const Slide02: React.FC = () => {
           style={{
             fontSize: 56,
             fontWeight: 700,
-            color: theme.colors.primary,
+            color: theme.colors.textGray,
             textAlign: 'center',
           }}
         >
