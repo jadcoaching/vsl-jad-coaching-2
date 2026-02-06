@@ -36,9 +36,9 @@ export const Slide09: React.FC = () => {
           style={{
             fontSize: 52,
             fontWeight: 500,
-            color: theme.colors.textGray,
+            color: theme.colors.textWhite,
             textAlign: 'center',
-            lineHeight: 1.5,
+            lineHeight: 1.4,
           }}
         >
           Tu arrives le jour J avec confiance
