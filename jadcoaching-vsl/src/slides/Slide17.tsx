@@ -4,15 +4,15 @@ import { SlideWrapper } from '../components/SlideWrapper';
 import { AnimatedText } from '../components/AnimatedText';
 import { theme } from '../styles/theme';
 
-export const Slide03: React.FC = () => {
+export const Slide17: React.FC = () => {
   const frame = useCurrentFrame();
 
-  const arrowX = interpolate(frame, [40, 60], [-50, 0], {
+  const arrowX = interpolate(frame, [60, 80], [-50, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  const arrowOpacity = interpolate(frame, [35, 45], [0, 1], {
+  const arrowOpacity = interpolate(frame, [55, 65], [0, 1], {
     extrapolateRight: 'clamp',
   });
 
@@ -31,14 +31,28 @@ export const Slide03: React.FC = () => {
           delay={0}
           animation="fadeUp"
           style={{
-            fontSize: 72,
+            fontSize: 56,
             fontWeight: 600,
             color: theme.colors.textWhite,
+            textAlign: 'center',
+            marginBottom: 60,
+          }}
+        >
+          Ce qui fait échouer la majorité des étudiants
+        </AnimatedText>
+
+        <AnimatedText
+          delay={20}
+          animation="fadeIn"
+          style={{
+            fontSize: 42,
+            fontWeight: 400,
+            color: theme.colors.textGray,
             textAlign: 'center',
             marginBottom: 50,
           }}
         >
-          Le problème ce n'est pas ton niveau.
+          Ce n'est pas le manque de travail.
         </AnimatedText>
 
         <div
@@ -61,13 +75,13 @@ export const Slide03: React.FC = () => {
           </div>
           <div
             style={{
-              fontSize: 56,
+              fontSize: 52,
               fontWeight: 700,
               color: theme.colors.primary,
               textShadow: theme.shadows.textGlow,
             }}
           >
-            C'est ta façon de travailler.
+            C'est le manque de stratégie.
           </div>
         </div>
       </AbsoluteFill>

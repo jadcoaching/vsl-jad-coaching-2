@@ -1,16 +1,11 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
+import { AbsoluteFill } from 'remotion';
 import { SlideWrapper } from '../components/SlideWrapper';
 import { AnimatedText } from '../components/AnimatedText';
+import { Logo } from '../components/Logo';
 import { theme } from '../styles/theme';
 
 export const Slide05: React.FC = () => {
-  const frame = useCurrentFrame();
-
-  const numberScale = interpolate(frame, [0, 20], [0, 1], {
-    extrapolateRight: 'clamp',
-  });
-
   return (
     <SlideWrapper variant="dark">
       <AbsoluteFill
@@ -19,48 +14,43 @@ export const Slide05: React.FC = () => {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          padding: 100,
+          padding: 80,
         }}
       >
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'flex-start',
-            gap: 60,
-            maxWidth: 1400,
-          }}
-        >
+        <AnimatedText delay={0} animation="fadeIn">
           <div
             style={{
-              fontSize: 180,
-              fontWeight: 800,
-              color: theme.colors.primary,
-              lineHeight: 1,
-              textShadow: theme.shadows.textGlow,
-              transform: `scale(${numberScale})`,
+              fontSize: 42,
+              fontWeight: 400,
+              color: theme.colors.textGray,
+              textAlign: 'center',
+              marginBottom: 20,
+              textTransform: 'uppercase',
+              letterSpacing: 4,
             }}
           >
-            #2
+            Accompagnement
           </div>
+        </AnimatedText>
 
-          <AnimatedText
-            delay={15}
-            animation="fadeUp"
-            style={{
-              fontSize: 52,
-              fontWeight: 500,
-              color: theme.colors.textWhite,
-              lineHeight: 1.4,
-              paddingTop: 40,
-            }}
-          >
-            Développe une méthode claire pour
-            <br />
-            <span style={{ color: theme.colors.primary }}>
-              aborder n'importe quel exercice
-            </span>
-          </AnimatedText>
-        </div>
+        <AnimatedText delay={10} animation="scaleIn">
+          <Logo size="xlarge" animated={false} />
+        </AnimatedText>
+
+        <AnimatedText
+          delay={30}
+          animation="fadeUp"
+          glow
+          style={{
+            fontSize: 56,
+            fontWeight: 600,
+            color: theme.colors.primary,
+            textAlign: 'center',
+            marginTop: 60,
+          }}
+        >
+          Comment ça fonctionne ?
+        </AnimatedText>
       </AbsoluteFill>
     </SlideWrapper>
   );

@@ -18,6 +18,8 @@ import {
   Slide14,
   Slide15,
   Slide16,
+  Slide17,
+  Slide18,
 } from './slides';
 import { theme } from './styles/theme';
 
@@ -28,21 +30,23 @@ const SLIDE_DURATION = 600; // 20 seconds at 30fps
 
 const SLIDE_CONFIG = [
   { component: Slide01, duration: SLIDE_DURATION },    // Tu es étudiant en Suisse ?
-  { component: Slide02, duration: SLIDE_DURATION },    // Je veux te faire réussir
-  { component: Slide03, duration: SLIDE_DURATION },    // Comment ça fonctionne ?
-  { component: Slide04, duration: SLIDE_DURATION },    // #1 Débloque les concepts
-  { component: Slide05, duration: SLIDE_DURATION },    // #2 Développe une méthode
-  { component: Slide06, duration: SLIDE_DURATION },    // #3 Travaille sur ce qui tombe
-  { component: Slide07, duration: SLIDE_DURATION },    // Comment je peux te promettre
-  { component: Slide08, duration: SLIDE_DURATION },    // Jad, Diplômé EPFL
-  { component: Slide09, duration: SLIDE_DURATION },    // Plus de 1254 étudiants
-  { component: Slide10, duration: SLIDE_DURATION },    // Témoignage Lou
-  { component: Slide11, duration: SLIDE_DURATION },    // Témoignage Stan
-  { component: Slide12, duration: SLIDE_DURATION },    // Témoignage Alexis
-  { component: Slide13, duration: SLIDE_DURATION },    // Témoignage Elisa
-  { component: Slide14, duration: SLIDE_DURATION },    // Témoignage Val
-  { component: Slide15, duration: SLIDE_DURATION },    // Ce qui fait échouer
-  { component: Slide16, duration: SLIDE_DURATION },    // Réserve ton appel
+  { component: Slide02, duration: SLIDE_DURATION },    // Tu GALÈRES en maths ou en stats ?
+  { component: Slide03, duration: SLIDE_DURATION },    // Le problème ce n'est pas ton niveau
+  { component: Slide04, duration: SLIDE_DURATION },    // Je vais te faire réussir
+  { component: Slide05, duration: SLIDE_DURATION },    // Comment ça fonctionne ?
+  { component: Slide06, duration: SLIDE_DURATION },    // #1 Débloque les concepts
+  { component: Slide07, duration: SLIDE_DURATION },    // #2 Développe une méthode
+  { component: Slide08, duration: SLIDE_DURATION },    // #3 Travaille sur ce qui tombe
+  { component: Slide09, duration: SLIDE_DURATION },    // Comment je peux te promettre
+  { component: Slide10, duration: SLIDE_DURATION },    // Jad, Diplômé EPFL
+  { component: Slide11, duration: SLIDE_DURATION },    // Plus de 1254 étudiants
+  { component: Slide12, duration: SLIDE_DURATION },    // Témoignage Lou
+  { component: Slide13, duration: SLIDE_DURATION },    // Témoignage Stan
+  { component: Slide14, duration: SLIDE_DURATION },    // Témoignage Elisa
+  { component: Slide15, duration: SLIDE_DURATION },    // Témoignage Alexis
+  { component: Slide16, duration: SLIDE_DURATION },    // Témoignage Val
+  { component: Slide17, duration: SLIDE_DURATION },    // Ce qui fait échouer
+  { component: Slide18, duration: SLIDE_DURATION },    // Réserve ton appel
 ];
 
 export const JadCoachingVSL: React.FC = () => {

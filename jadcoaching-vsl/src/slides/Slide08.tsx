@@ -1,51 +1,66 @@
 import React from 'react';
-import { AbsoluteFill } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
 import { SlideWrapper } from '../components/SlideWrapper';
 import { AnimatedText } from '../components/AnimatedText';
 import { theme } from '../styles/theme';
 
 export const Slide08: React.FC = () => {
+  const frame = useCurrentFrame();
+
+  const numberScale = interpolate(frame, [0, 20], [0, 1], {
+    extrapolateRight: 'clamp',
+  });
+
   return (
-    <SlideWrapper variant="uniform">
+    <SlideWrapper variant="dark">
       <AbsoluteFill
         style={{
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
+          padding: 100,
         }}
       >
-        <AnimatedText
-          delay={0}
-          animation="fadeUp"
+        <div
           style={{
-            fontSize: 110,
-            fontWeight: 700,
-            color: theme.colors.textWhite,
-            textAlign: 'center',
-            textShadow: '0 0 30px rgba(0, 207, 255, 0.4)',
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: 60,
+            maxWidth: 1400,
           }}
         >
-          <span style={{ color: theme.colors.primary }}>Jad</span>, Diplômé{' '}
-          <span style={{ color: theme.colors.primary }}>EPFL</span>
-        </AnimatedText>
+          <div
+            style={{
+              fontSize: 180,
+              fontWeight: 800,
+              color: theme.colors.primary,
+              lineHeight: 1,
+              textShadow: theme.shadows.textGlow,
+              transform: `scale(${numberScale})`,
+            }}
+          >
+            #3
+          </div>
 
-        <AnimatedText
-          delay={20}
-          animation="fadeUp"
-          style={{
-            fontSize: 48,
-            fontWeight: 400,
-            color: theme.colors.textGray,
-            textAlign: 'center',
-            marginTop: 30,
-          }}
-        >
-          Mathématiques •{' '}
-          <span style={{ color: theme.colors.primary, fontWeight: 600 }}>
-            +10 ans d'expérience
-          </span>
-        </AnimatedText>
+          <AnimatedText
+            delay={15}
+            animation="fadeUp"
+            style={{
+              fontSize: 52,
+              fontWeight: 500,
+              color: theme.colors.textWhite,
+              lineHeight: 1.4,
+              paddingTop: 40,
+            }}
+          >
+            Travaille exactement sur
+            <br />
+            <span style={{ color: theme.colors.primary }}>
+              ce qui tombe aux examens
+            </span>
+          </AnimatedText>
+        </div>
       </AbsoluteFill>
     </SlideWrapper>
   );

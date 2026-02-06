@@ -1,15 +1,116 @@
 import React from 'react';
-import { TestimonialSlide } from '../components/TestimonialSlide';
+import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig } from 'remotion';
+import { SlideWrapper } from '../components/SlideWrapper';
+import { AnimatedText } from '../components/AnimatedText';
+import { theme } from '../styles/theme';
 
 export const Slide11: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+
+  const countTo = 1254;
+  const countDuration = 45;
+
+  const count = Math.floor(
+    interpolate(frame, [15, 15 + countDuration], [0, countTo], {
+      extrapolateLeft: 'clamp',
+      extrapolateRight: 'clamp',
+    })
+  );
+
+  const universities = ['EPFL', 'HEC', 'EHL', 'HEG', 'HEIG', 'UNIL', 'UNIGE', 'etc.'];
+
   return (
-    <TestimonialSlide
-      quote="Je suis passé d'une note de 1.7/6 en mathématiques à 5/6 en peu de temps. Le changement a été immédiat : Jad expliquait chaque notion avec une clarté et une rapidité incroyables. Ce qui était flou en classe devenait limpide avec lui."
-      name="Stan Stelcher"
-      school="HEIG-Vaud"
-      beforeGrade="1.7/6"
-      afterGrade="5/6"
-      photo="stan-stelcher.jpg"
-    />
+    <SlideWrapper variant="soft">
+      <AbsoluteFill
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: 80,
+        }}
+      >
+        <AnimatedText
+          delay={0}
+          animation="fadeIn"
+          style={{
+            fontSize: 36,
+            fontWeight: 400,
+            color: theme.colors.textGray,
+            textAlign: 'center',
+            marginBottom: 20,
+            textTransform: 'uppercase',
+            letterSpacing: 4,
+          }}
+        >
+          Plus de
+        </AnimatedText>
+
+        <div
+          style={{
+            fontSize: 140,
+            fontWeight: 800,
+            color: theme.colors.primary,
+            textShadow: theme.shadows.textGlow,
+            marginBottom: 20,
+          }}
+        >
+          {count.toLocaleString('fr-CH')}
+        </div>
+
+        <AnimatedText
+          delay={50}
+          animation="fadeUp"
+          style={{
+            fontSize: 48,
+            fontWeight: 600,
+            color: theme.colors.textWhite,
+            textAlign: 'center',
+            marginBottom: 60,
+          }}
+        >
+          étudiants accompagnés à la réussite
+        </AnimatedText>
+
+        <AnimatedText
+          delay={60}
+          animation="fadeIn"
+          style={{
+            fontSize: 28,
+            fontWeight: 400,
+            color: theme.colors.textGray,
+            marginBottom: 30,
+          }}
+        >
+          Universités & Hautes Écoles suisses
+        </AnimatedText>
+
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 15,
+          }}
+        >
+          {universities.map((uni, index) => (
+            <AnimatedText
+              key={uni}
+              delay={70 + index * 4}
+              animation="scaleIn"
+              style={{
+                fontSize: 22,
+                fontWeight: 600,
+                color: theme.colors.primary,
+                padding: '6px 12px',
+              }}
+            >
+              {uni}
+            </AnimatedText>
+          ))}
+        </div>
+      </AbsoluteFill>
+    </SlideWrapper>
   );
 };

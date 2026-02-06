@@ -7,14 +7,12 @@ import { theme } from '../styles/theme';
 export const Slide07: React.FC = () => {
   const frame = useCurrentFrame();
 
-  const questionMarkOpacity = interpolate(
-    Math.sin(frame / 15),
-    [-1, 1],
-    [0.5, 1]
-  );
+  const numberScale = interpolate(frame, [0, 20], [0, 1], {
+    extrapolateRight: 'clamp',
+  });
 
   return (
-    <SlideWrapper variant="soft">
+    <SlideWrapper variant="dark">
       <AbsoluteFill
         style={{
           display: 'flex',
@@ -24,29 +22,45 @@ export const Slide07: React.FC = () => {
           padding: 100,
         }}
       >
-        <AnimatedText
-          delay={0}
-          animation="fadeUp"
+        <div
           style={{
-            fontSize: 64,
-            fontWeight: 600,
-            color: theme.colors.textWhite,
-            textAlign: 'center',
-            lineHeight: 1.4,
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: 60,
+            maxWidth: 1400,
           }}
         >
-          Comment je peux te promettre
-          <br />
-          <span
+          <div
             style={{
+              fontSize: 180,
+              fontWeight: 800,
               color: theme.colors.primary,
+              lineHeight: 1,
               textShadow: theme.shadows.textGlow,
+              transform: `scale(${numberScale})`,
             }}
           >
-            que tu vas réussir ?
-          </span>
-        </AnimatedText>
+            #2
+          </div>
 
+          <AnimatedText
+            delay={15}
+            animation="fadeUp"
+            style={{
+              fontSize: 52,
+              fontWeight: 500,
+              color: theme.colors.textWhite,
+              lineHeight: 1.4,
+              paddingTop: 40,
+            }}
+          >
+            Développe une méthode claire pour
+            <br />
+            <span style={{ color: theme.colors.primary }}>
+              aborder n'importe quel exercice
+            </span>
+          </AnimatedText>
+        </div>
       </AbsoluteFill>
     </SlideWrapper>
   );

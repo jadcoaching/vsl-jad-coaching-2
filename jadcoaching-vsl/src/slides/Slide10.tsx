@@ -1,15 +1,52 @@
 import React from 'react';
-import { TestimonialSlide } from '../components/TestimonialSlide';
+import { AbsoluteFill } from 'remotion';
+import { SlideWrapper } from '../components/SlideWrapper';
+import { AnimatedText } from '../components/AnimatedText';
+import { theme } from '../styles/theme';
 
 export const Slide10: React.FC = () => {
   return (
-    <TestimonialSlide
-      quote="D'une note de 2/6 à mon premier examen de maths, à un incroyable 5.5/6 après l'accompagnement JadCoaching ! Il a su identifier mes difficultés et m'a préparé de manière optimale pour l'examen. Grâce à son soutien, j'ai non seulement acquis de solides connaissances, mais j'ai aussi retrouvé confiance en moi."
-      name="Lou Zahnd"
-      school="HEC Lausanne"
-      beforeGrade="2/6"
-      afterGrade="5.5/6"
-      photo="lou-zahnd.jpg"
-    />
+    <SlideWrapper variant="uniform">
+      <AbsoluteFill
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <AnimatedText
+          delay={0}
+          animation="fadeUp"
+          style={{
+            fontSize: 110,
+            fontWeight: 700,
+            color: theme.colors.textWhite,
+            textAlign: 'center',
+            textShadow: '0 0 30px rgba(0, 207, 255, 0.4)',
+          }}
+        >
+          <span style={{ color: theme.colors.primary }}>Jad</span>, Diplômé{' '}
+          <span style={{ color: theme.colors.primary }}>EPFL</span>
+        </AnimatedText>
+
+        <AnimatedText
+          delay={20}
+          animation="fadeUp"
+          style={{
+            fontSize: 48,
+            fontWeight: 400,
+            color: theme.colors.textGray,
+            textAlign: 'center',
+            marginTop: 30,
+          }}
+        >
+          Mathématiques •{' '}
+          <span style={{ color: theme.colors.primary, fontWeight: 600 }}>
+            +10 ans d'expérience
+          </span>
+        </AnimatedText>
+      </AbsoluteFill>
+    </SlideWrapper>
   );
 };

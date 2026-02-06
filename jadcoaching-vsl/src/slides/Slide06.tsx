@@ -40,7 +40,7 @@ export const Slide06: React.FC = () => {
               transform: `scale(${numberScale})`,
             }}
           >
-            #3
+            #1
           </div>
 
           <AnimatedText
@@ -54,10 +54,10 @@ export const Slide06: React.FC = () => {
               paddingTop: 40,
             }}
           >
-            Travaille exactement sur
+            Débloque les concepts complexes
             <br />
             <span style={{ color: theme.colors.primary }}>
-              ce qui tombe aux examens
+              en quelques minutes
             </span>
           </AnimatedText>
         </div>

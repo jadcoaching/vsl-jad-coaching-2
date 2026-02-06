@@ -4,10 +4,12 @@ import { TestimonialSlide } from '../components/TestimonialSlide';
 export const Slide13: React.FC = () => {
   return (
     <TestimonialSlide
-      quote="Grâce à Jad, j'ai abordé l'EPFL avec confiance. Sa méthode claire m'a permis d'avoir d'excellentes notes en Analyse et en Algèbre Linéaire sans que ces matières prennent trop de place. Sérieux et motivant, je le recommande vivement."
-      name="Alexis Allemand"
-      school="EPFL"
-      highlight="5/6"
+      quote="Je suis passé d'une note de 1.7/6 en mathématiques à 5/6 en peu de temps. Le changement a été immédiat : Jad expliquait chaque notion avec une clarté et une rapidité incroyables. Ce qui était flou en classe devenait limpide avec lui."
+      name="Stan Stelcher"
+      school="HEIG-Vaud"
+      beforeGrade="1.7/6"
+      afterGrade="5/6"
+      photo="stan-stelcher.jpg"
     />
   );
 };

@@ -1,24 +1,17 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
 import { SlideWrapper } from '../components/SlideWrapper';
 import { AnimatedText } from '../components/AnimatedText';
 import { theme } from '../styles/theme';
 
 export const Slide09: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
 
-  const countTo = 1254;
-  const countDuration = 45;
-
-  const count = Math.floor(
-    interpolate(frame, [15, 15 + countDuration], [0, countTo], {
-      extrapolateLeft: 'clamp',
-      extrapolateRight: 'clamp',
-    })
+  const questionMarkOpacity = interpolate(
+    Math.sin(frame / 15),
+    [-1, 1],
+    [0.5, 1]
   );
-
-  const universities = ['EPFL', 'HEC', 'EHL', 'HEG', 'HEIG', 'UNIL', 'UNIGE', 'etc.'];
 
   return (
     <SlideWrapper variant="soft">
@@ -28,88 +21,32 @@ export const Slide09: React.FC = () => {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          padding: 80,
+          padding: 100,
         }}
       >
         <AnimatedText
           delay={0}
-          animation="fadeIn"
-          style={{
-            fontSize: 36,
-            fontWeight: 400,
-            color: theme.colors.textGray,
-            textAlign: 'center',
-            marginBottom: 20,
-            textTransform: 'uppercase',
-            letterSpacing: 4,
-          }}
-        >
-          Plus de
-        </AnimatedText>
-
-        <div
-          style={{
-            fontSize: 140,
-            fontWeight: 800,
-            color: theme.colors.primary,
-            textShadow: theme.shadows.textGlow,
-            marginBottom: 20,
-          }}
-        >
-          {count.toLocaleString('fr-CH')}
-        </div>
-
-        <AnimatedText
-          delay={50}
           animation="fadeUp"
           style={{
-            fontSize: 48,
+            fontSize: 64,
             fontWeight: 600,
             color: theme.colors.textWhite,
             textAlign: 'center',
-            marginBottom: 60,
+            lineHeight: 1.4,
           }}
         >
-          étudiants accompagnés à la réussite
+          Comment je peux te promettre
+          <br />
+          <span
+            style={{
+              color: theme.colors.primary,
+              textShadow: theme.shadows.textGlow,
+            }}
+          >
+            que tu vas réussir ?
+          </span>
         </AnimatedText>
 
-        <AnimatedText
-          delay={60}
-          animation="fadeIn"
-          style={{
-            fontSize: 28,
-            fontWeight: 400,
-            color: theme.colors.textGray,
-            marginBottom: 30,
-          }}
-        >
-          Universités & Hautes Écoles suisses
-        </AnimatedText>
-
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: 15,
-          }}
-        >
-          {universities.map((uni, index) => (
-            <AnimatedText
-              key={uni}
-              delay={70 + index * 4}
-              animation="scaleIn"
-              style={{
-                fontSize: 22,
-                fontWeight: 600,
-                color: theme.colors.primary,
-                padding: '6px 12px',
-              }}
-            >
-              {uni}
-            </AnimatedText>
-          ))}
-        </div>
       </AbsoluteFill>
     </SlideWrapper>
   );
