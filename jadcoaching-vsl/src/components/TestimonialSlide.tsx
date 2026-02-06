@@ -109,7 +109,7 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
           delay={15}
           animation="fadeUp"
           style={{
-            fontSize: 34,
+            fontSize: 42,
             fontWeight: 400,
             color: theme.colors.textWhite,
             textAlign: 'center',
@@ -135,7 +135,7 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
         >
           <div
             style={{
-              fontSize: 32,
+              fontSize: 38,
               fontWeight: 600,
               color: theme.colors.textWhite,
             }}
@@ -144,7 +144,7 @@ export const TestimonialSlide: React.FC<TestimonialSlideProps> = ({
           </div>
           <div
             style={{
-              fontSize: 24,
+              fontSize: 30,
               fontWeight: 400,
               color: theme.colors.primary,
             }}
