@@ -4,7 +4,7 @@ import { SlideWrapper } from '../components/SlideWrapper';
 import { AnimatedText } from '../components/AnimatedText';
 import { theme } from '../styles/theme';
 
-export const Slide18: React.FC = () => {
+export const Slide19: React.FC = () => {
   const frame = useCurrentFrame();
 
   const iconScale = interpolate(frame, [0, 25], [0, 1], {
@@ -29,7 +29,7 @@ export const Slide18: React.FC = () => {
             marginBottom: 40,
           }}
         >
-          📞
+          🎯
         </div>
 
         <AnimatedText
@@ -44,7 +44,7 @@ export const Slide18: React.FC = () => {
             marginBottom: 20,
           }}
         >
-          Étape 1
+          Étape 2
         </AnimatedText>
 
         <AnimatedText
@@ -58,7 +58,7 @@ export const Slide18: React.FC = () => {
             marginBottom: 40,
           }}
         >
-          Appel découverte gratuit (30 min)
+          Accompagnement personnalisé
         </AnimatedText>
 
         <AnimatedText
@@ -73,9 +73,9 @@ export const Slide18: React.FC = () => {
             maxWidth: 900,
           }}
         >
-          On analyse ta situation : niveau, blocages, objectif.
+          Si je peux t'aider, je te propose un accompagnement sur-mesure
           <br />
-          Tu repars avec un plan clair.
+          adapté à ton cours et ton examen.
         </AnimatedText>
       </AbsoluteFill>
     </SlideWrapper>

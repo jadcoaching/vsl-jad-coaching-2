@@ -2,17 +2,20 @@ import React from 'react';
 import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
 import { SlideWrapper } from '../components/SlideWrapper';
 import { AnimatedText } from '../components/AnimatedText';
+import { Logo } from '../components/Logo';
 import { theme } from '../styles/theme';
 
-export const Slide18: React.FC = () => {
+export const Slide22: React.FC = () => {
   const frame = useCurrentFrame();
 
-  const iconScale = interpolate(frame, [0, 25], [0, 1], {
-    extrapolateRight: 'clamp',
-  });
+  const arrowBounce = interpolate(
+    Math.sin(frame / 10),
+    [-1, 1],
+    [-8, 8]
+  );
 
   return (
-    <SlideWrapper variant="dark">
+    <SlideWrapper variant="soft">
       <AbsoluteFill
         style={{
           display: 'flex',
@@ -22,60 +25,52 @@ export const Slide18: React.FC = () => {
           padding: 100,
         }}
       >
-        <div
-          style={{
-            fontSize: 80,
-            transform: `scale(${iconScale})`,
-            marginBottom: 40,
-          }}
-        >
-          📞
-        </div>
-
-        <AnimatedText
-          delay={10}
-          animation="fadeUp"
-          style={{
-            fontSize: 28,
-            fontWeight: 600,
-            color: theme.colors.primary,
-            textTransform: 'uppercase',
-            letterSpacing: 4,
-            marginBottom: 20,
-          }}
-        >
-          Étape 1
+        <AnimatedText delay={0} animation="scaleIn">
+          <Logo size="large" animated={false} />
         </AnimatedText>
 
         <AnimatedText
-          delay={20}
+          delay={15}
           animation="fadeUp"
+          glow
           style={{
-            fontSize: 56,
+            fontSize: 72,
             fontWeight: 700,
-            color: theme.colors.textWhite,
+            color: theme.colors.primary,
             textAlign: 'center',
-            marginBottom: 40,
+            marginTop: 60,
+            marginBottom: 50,
+            textShadow: theme.shadows.textGlow,
           }}
         >
-          Appel découverte gratuit (30 min)
+          Réserve ton appel gratuit
         </AnimatedText>
 
         <AnimatedText
           delay={35}
           animation="fadeIn"
           style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 15,
             fontSize: 32,
             fontWeight: 400,
             color: theme.colors.textGray,
             textAlign: 'center',
-            lineHeight: 1.6,
-            maxWidth: 900,
           }}
         >
-          On analyse ta situation : niveau, blocages, objectif.
-          <br />
-          Tu repars avec un plan clair.
+          <span>Ça ne t'engage à rien • Lien en description</span>
+          <span
+            style={{
+              fontSize: 40,
+              color: theme.colors.primary,
+              textShadow: theme.shadows.textGlow,
+              transform: `translateY(${arrowBounce}px)`,
+              display: 'inline-block',
+            }}
+          >
+            ↓
+          </span>
         </AnimatedText>
       </AbsoluteFill>
     </SlideWrapper>

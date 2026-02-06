@@ -22,9 +22,10 @@ export const Slide09: React.FC = () => {
           style={{
             fontSize: 90,
             fontWeight: 700,
-            color: theme.colors.textWhite,
+            color: theme.colors.primary,
             textAlign: 'center',
             marginBottom: 50,
+            textShadow: theme.shadows.textGlow,
           }}
         >
           Résultat ?

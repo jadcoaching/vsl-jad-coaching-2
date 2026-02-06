@@ -4,7 +4,7 @@ import { SlideWrapper } from '../components/SlideWrapper';
 import { AnimatedText } from '../components/AnimatedText';
 import { theme } from '../styles/theme';
 
-export const Slide18: React.FC = () => {
+export const Slide20: React.FC = () => {
   const frame = useCurrentFrame();
 
   const iconScale = interpolate(frame, [0, 25], [0, 1], {
@@ -29,7 +29,7 @@ export const Slide18: React.FC = () => {
             marginBottom: 40,
           }}
         >
-          📞
+          🧠
         </div>
 
         <AnimatedText
@@ -44,7 +44,7 @@ export const Slide18: React.FC = () => {
             marginBottom: 20,
           }}
         >
-          Étape 1
+          Étape 3
         </AnimatedText>
 
         <AnimatedText
@@ -58,7 +58,7 @@ export const Slide18: React.FC = () => {
             marginBottom: 40,
           }}
         >
-          Appel découverte gratuit (30 min)
+          On travaille ensemble jusqu'à la réussite
         </AnimatedText>
 
         <AnimatedText
@@ -70,12 +70,12 @@ export const Slide18: React.FC = () => {
             color: theme.colors.textGray,
             textAlign: 'center',
             lineHeight: 1.6,
-            maxWidth: 900,
+            maxWidth: 1000,
           }}
         >
-          On analyse ta situation : niveau, blocages, objectif.
+          Séances + outils : WhatsApp 24/7, fiches, vidéos,
           <br />
-          Tu repars avec un plan clair.
+          examens blancs personnalisés.
         </AnimatedText>
       </AbsoluteFill>
     </SlideWrapper>
