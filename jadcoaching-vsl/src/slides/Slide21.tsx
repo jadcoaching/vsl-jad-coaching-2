@@ -17,8 +17,8 @@ export const Slide21: React.FC = () => {
 
   const glowPulse = Math.sin(frame / 20) * 0.2 + 0.8;
 
-  // Shine effect
-  const shine = interpolate(frame, [25, 60], [0, 1], {
+  // Checkmark animation
+  const checkProgress = interpolate(frame, [30, 50], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -34,7 +34,7 @@ export const Slide21: React.FC = () => {
           padding: 100,
         }}
       >
-        {/* Premium Trophy/Award Icon */}
+        {/* Premium Document with Checkmark Icon */}
         <div
           style={{
             transform: `scale(${iconScale})`,
@@ -44,53 +44,31 @@ export const Slide21: React.FC = () => {
           }}
         >
           <svg width="100" height="100" viewBox="0 0 24 24" fill="none">
+            {/* Document */}
             <path
-              d="M6 9H4.5a2.5 2.5 0 010-5H6"
+              d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"
               stroke={theme.colors.primary}
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
+            {/* Folded corner */}
             <path
-              d="M18 9h1.5a2.5 2.5 0 000-5H18"
+              d="M14 2v6h6"
               stroke={theme.colors.primary}
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
+            {/* Checkmark */}
             <path
-              d="M4 22h16"
+              d="M9 15l2 2 4-4"
               stroke={theme.colors.primary}
-              strokeWidth="1.5"
+              strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-            />
-            <path
-              d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"
-              stroke={theme.colors.primary}
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"
-              stroke={theme.colors.primary}
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M18 2H6v7a6 6 0 1012 0V2z"
-              stroke={theme.colors.primary}
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              fill={`rgba(0, 207, 255, ${0.1 * shine})`}
-            />
-            <path
-              d="M12 8l1.5 1.5L12 11l-1.5-1.5L12 8z"
-              fill={theme.colors.primary}
-              opacity={shine}
+              strokeDasharray={10}
+              strokeDashoffset={10 * (1 - checkProgress)}
             />
           </svg>
         </div>

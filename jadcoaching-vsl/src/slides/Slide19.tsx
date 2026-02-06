@@ -83,7 +83,7 @@ export const Slide19: React.FC = () => {
             color: theme.colors.textGray,
             textAlign: 'center',
             lineHeight: 1.6,
-            maxWidth: 900,
+            maxWidth: 1000,
           }}
         >
           Si je peux t'aider, je te propose un accompagnement sur-mesure
