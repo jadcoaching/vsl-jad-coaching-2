@@ -37,37 +37,22 @@ export const Slide20: React.FC = () => {
             filter: `drop-shadow(0 0 ${20 * glowPulse}px rgba(0, 207, 255, 0.5))`,
           }}
         >
-          <svg width="120" height="100" viewBox="0 0 30 24" fill="none">
-            {/* Professor (larger, left) */}
-            <circle cx="8" cy="6" r="3" stroke={theme.colors.primary} strokeWidth="1.5" />
+          <svg width="120" height="100" viewBox="0 0 24 24" fill="none">
+            {/* Professor (left) */}
+            <circle cx="7" cy="5" r="2.5" stroke={theme.colors.primary} strokeWidth="1.5" />
             <path
-              d="M2 20c0-3.314 2.686-6 6-6s6 2.686 6 6"
+              d="M2 19c0-2.761 2.239-5 5-5s5 2.239 5 5"
               stroke={theme.colors.primary}
               strokeWidth="1.5"
               strokeLinecap="round"
             />
-            {/* Professor pointer/teaching gesture */}
+            {/* Student (right) */}
+            <circle cx="17" cy="5" r="2.5" stroke={theme.colors.primary} strokeWidth="1.5" />
             <path
-              d="M13 10l4-3"
+              d="M12 19c0-2.761 2.239-5 5-5s5 2.239 5 5"
               stroke={theme.colors.primary}
               strokeWidth="1.5"
               strokeLinecap="round"
-            />
-            {/* Student (smaller, right) */}
-            <circle cx="22" cy="8" r="2.5" stroke={theme.colors.primary} strokeWidth="1.5" />
-            <path
-              d="M17 20c0-2.761 2.239-5 5-5s5 2.239 5 5"
-              stroke={theme.colors.primary}
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
-            {/* Book/learning element */}
-            <path
-              d="M18 5l2 1.5L22 5"
-              stroke={theme.colors.primary}
-              strokeWidth="1.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
             />
           </svg>
         </div>
