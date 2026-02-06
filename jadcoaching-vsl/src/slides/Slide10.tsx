@@ -36,8 +36,8 @@ export const Slide10: React.FC = () => {
             textShadow: '0 0 30px rgba(0, 207, 255, 0.4)',
           }}
         >
-          <span style={{ color: theme.colors.primary }}>Jad</span>, Diplômé{' '}
-          <span style={{ color: theme.colors.primary }}>EPFL</span>
+          <span style={{ color: theme.colors.primary, textShadow: theme.shadows.textGlow }}>Jad</span>, Diplômé{' '}
+          <span style={{ color: theme.colors.primary, textShadow: theme.shadows.textGlow }}>EPFL</span>
         </AnimatedText>
 
         <AnimatedText

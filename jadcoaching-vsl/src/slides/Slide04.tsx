@@ -29,7 +29,7 @@ export const Slide04: React.FC = () => {
           }}
         >
           Je vais te faire{' '}
-          <span style={{ color: theme.colors.primary }}>réussir</span>
+          <span style={{ color: theme.colors.primary, textShadow: theme.shadows.textGlow }}>réussir</span>
           <br />
           ton prochain examen
         </AnimatedText>

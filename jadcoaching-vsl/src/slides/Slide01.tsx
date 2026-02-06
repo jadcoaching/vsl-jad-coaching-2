@@ -29,7 +29,9 @@ export const Slide01: React.FC = () => {
             marginBottom: 20,
           }}
         >
-          Tu es étudiant en Suisse ?
+          Tu es étudiant en{' '}
+          <span style={{ color: theme.colors.primary, textShadow: theme.shadows.textGlow }}>Suisse</span>
+          {' '}?
         </AnimatedText>
 
         <AnimatedText

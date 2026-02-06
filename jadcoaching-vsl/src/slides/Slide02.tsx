@@ -23,7 +23,7 @@ export const Slide02: React.FC = () => {
     // Near layer (foreground, larger, prominent)
     { symbol: '∫', x: -350, y: 280, depth: 'near' as const, curvedEntry: true },
     { symbol: 'σ', x: 380, y: -220, depth: 'near' as const },
-    { symbol: 'lim', x: -550, y: 60, depth: 'mid' as const },
+    { symbol: 'lim', x: -580, y: -120, depth: 'mid' as const },
     { symbol: 'λ', x: 520, y: 300, depth: 'near' as const, curvedEntry: true },
   ];
 
