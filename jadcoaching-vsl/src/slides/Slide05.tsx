@@ -20,11 +20,11 @@ export const Slide05: React.FC = () => {
         <AnimatedText delay={0} animation="fadeIn">
           <div
             style={{
-              fontSize: 42,
+              fontSize: 56,
               fontWeight: 400,
               color: theme.colors.textGray,
               textAlign: 'center',
-              marginBottom: 20,
+              marginBottom: 30,
               textTransform: 'uppercase',
               letterSpacing: 4,
             }}
@@ -35,21 +35,6 @@ export const Slide05: React.FC = () => {
 
         <AnimatedText delay={10} animation="scaleIn">
           <Logo size="xlarge" animated={false} />
-        </AnimatedText>
-
-        <AnimatedText
-          delay={30}
-          animation="fadeUp"
-          glow
-          style={{
-            fontSize: 56,
-            fontWeight: 600,
-            color: theme.colors.primary,
-            textAlign: 'center',
-            marginTop: 60,
-          }}
-        >
-          3 éléments
         </AnimatedText>
       </AbsoluteFill>
     </SlideWrapper>
