@@ -52,7 +52,7 @@ export const Slide17: React.FC = () => {
             marginBottom: 50,
           }}
         >
-          Ce n'est pas le manque de travail.
+          Les profs ne testent pas ce que tu sais.
         </AnimatedText>
 
         <div
@@ -81,7 +81,7 @@ export const Slide17: React.FC = () => {
               textShadow: theme.shadows.textGlow,
             }}
           >
-            C'est le manque de stratégie.
+            Ils testent comment tu l'appliques.
           </div>
         </div>
       </AbsoluteFill>

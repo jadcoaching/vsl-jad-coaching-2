@@ -19,11 +19,11 @@ export const Slide02: React.FC = () => {
 
   const mathSymbols = [
     { symbol: '∑', x: -400, y: -150, size: 80, float: float1 },
-    { symbol: '∫', x: 380, y: -120, size: 90, float: float2 },
-    { symbol: 'σ', x: -350, y: 180, size: 70, float: float3 },
+    { symbol: 'π', x: 380, y: -120, size: 60, float: float2 },
+    { symbol: '√', x: -350, y: 180, size: 65, float: float3 },
     { symbol: 'μ', x: 400, y: 150, size: 75, float: float4 },
-    { symbol: 'π', x: -200, y: 220, size: 60, float: float2 },
-    { symbol: '√', x: 280, y: -200, size: 65, float: float1 },
+    { symbol: '∫', x: -200, y: 220, size: 90, float: float2 },
+    { symbol: 'σ', x: 280, y: -200, size: 70, float: float1 },
   ];
 
   return (
