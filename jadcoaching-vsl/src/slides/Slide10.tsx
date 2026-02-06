@@ -7,9 +7,9 @@ import { theme } from '../styles/theme';
 export const Slide10: React.FC = () => {
   const frame = useCurrentFrame();
 
-  // Count from 0 to 10 over 45 frames starting at frame 30
+  // Count from 0 to 10 over 20 frames starting at frame 25 (faster)
   const count = Math.floor(
-    interpolate(frame, [30, 75], [0, 10], {
+    interpolate(frame, [25, 45], [0, 10], {
       extrapolateLeft: 'clamp',
       extrapolateRight: 'clamp',
     })

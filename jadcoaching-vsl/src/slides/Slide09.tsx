@@ -1,18 +1,10 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
+import { AbsoluteFill } from 'remotion';
 import { SlideWrapper } from '../components/SlideWrapper';
 import { AnimatedText } from '../components/AnimatedText';
 import { theme } from '../styles/theme';
 
 export const Slide09: React.FC = () => {
-  const frame = useCurrentFrame();
-
-  const questionMarkOpacity = interpolate(
-    Math.sin(frame / 15),
-    [-1, 1],
-    [0.5, 1]
-  );
-
   return (
     <SlideWrapper variant="soft">
       <AbsoluteFill
@@ -28,25 +20,32 @@ export const Slide09: React.FC = () => {
           delay={0}
           animation="fadeUp"
           style={{
-            fontSize: 64,
-            fontWeight: 600,
+            fontSize: 90,
+            fontWeight: 700,
             color: theme.colors.textWhite,
             textAlign: 'center',
-            lineHeight: 1.4,
+            marginBottom: 50,
           }}
         >
-          Comment je peux te promettre
-          <br />
-          <span
-            style={{
-              color: theme.colors.primary,
-              textShadow: theme.shadows.textGlow,
-            }}
-          >
-            que tu vas réussir ?
-          </span>
+          Résultat ?
         </AnimatedText>
 
+        <AnimatedText
+          delay={20}
+          animation="fadeUp"
+          style={{
+            fontSize: 52,
+            fontWeight: 500,
+            color: theme.colors.primary,
+            textAlign: 'center',
+            lineHeight: 1.5,
+            textShadow: theme.shadows.textGlow,
+          }}
+        >
+          Tu arrives le jour J avec confiance
+          <br />
+          et tu réussis sans stress.
+        </AnimatedText>
       </AbsoluteFill>
     </SlideWrapper>
   );
