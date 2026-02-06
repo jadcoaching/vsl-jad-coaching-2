@@ -1,10 +1,20 @@
 import React from 'react';
-import { AbsoluteFill } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
 import { SlideWrapper } from '../components/SlideWrapper';
 import { AnimatedText } from '../components/AnimatedText';
 import { theme } from '../styles/theme';
 
 export const Slide10: React.FC = () => {
+  const frame = useCurrentFrame();
+
+  // Count from 0 to 10 over 45 frames starting at frame 30
+  const count = Math.floor(
+    interpolate(frame, [30, 75], [0, 10], {
+      extrapolateLeft: 'clamp',
+      extrapolateRight: 'clamp',
+    })
+  );
+
   return (
     <SlideWrapper variant="uniform">
       <AbsoluteFill
@@ -43,7 +53,7 @@ export const Slide10: React.FC = () => {
         >
           Mathématiques •{' '}
           <span style={{ color: theme.colors.primary, fontWeight: 600 }}>
-            +10 ans d'expérience
+            +{count} ans d'expérience
           </span>
         </AnimatedText>
       </AbsoluteFill>
