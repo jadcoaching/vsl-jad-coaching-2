@@ -37,19 +37,19 @@ export const Slide20: React.FC = () => {
             filter: `drop-shadow(0 0 ${20 * glowPulse}px rgba(0, 207, 255, 0.5))`,
           }}
         >
-          <svg width="120" height="100" viewBox="0 0 24 24" fill="none">
-            {/* Professor (left) */}
-            <circle cx="7" cy="5" r="2.5" stroke={theme.colors.primary} strokeWidth="1.5" />
+          <svg width="140" height="100" viewBox="0 0 28 24" fill="none">
+            {/* Professor (left, larger) */}
+            <circle cx="7" cy="4" r="3" stroke={theme.colors.primary} strokeWidth="1.5" />
             <path
-              d="M2 19c0-2.761 2.239-5 5-5s5 2.239 5 5"
+              d="M1 20c0-3.314 2.686-6 6-6s6 2.686 6 6"
               stroke={theme.colors.primary}
               strokeWidth="1.5"
               strokeLinecap="round"
             />
-            {/* Student (right) */}
-            <circle cx="17" cy="5" r="2.5" stroke={theme.colors.primary} strokeWidth="1.5" />
+            {/* Student (right, smaller) */}
+            <circle cx="20" cy="7" r="2" stroke={theme.colors.primary} strokeWidth="1.5" />
             <path
-              d="M12 19c0-2.761 2.239-5 5-5s5 2.239 5 5"
+              d="M15.5 20c0-2.485 2.015-4.5 4.5-4.5s4.5 2.015 4.5 4.5"
               stroke={theme.colors.primary}
               strokeWidth="1.5"
               strokeLinecap="round"
