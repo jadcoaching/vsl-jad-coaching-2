@@ -33,7 +33,9 @@ export const Slide23: React.FC = () => {
             marginBottom: 50,
           }}
         >
-          Ce qui fait échouer la majorité des étudiants
+          Ce qui fait échouer
+          <br />
+          la majorité des étudiants
         </AnimatedText>
 
         <AnimatedText
