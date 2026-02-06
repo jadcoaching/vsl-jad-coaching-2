@@ -25,6 +25,7 @@ import {
   Slide21,
   Slide22,
   Slide23,
+  Slide24,
 } from './slides';
 import { theme } from './styles/theme';
 
@@ -50,6 +51,7 @@ const SLIDE_CONFIG = [
   { component: Slide14, duration: SLIDE_DURATION },    // Témoignage Elisa
   { component: Slide15, duration: SLIDE_DURATION },    // Témoignage Alexis
   { component: Slide16, duration: SLIDE_DURATION },    // Témoignage Val
+  { component: Slide24, duration: SLIDE_DURATION },    // Pourquoi JadCoaching fonctionne
   { component: Slide23, duration: SLIDE_DURATION },    // Ce qui fait échouer la majorité
   { component: Slide17, duration: SLIDE_DURATION },    // Accompagnement + Comment ça fonctionne ?
   { component: Slide18, duration: SLIDE_DURATION },    // Étape 1 - Appel découverte
