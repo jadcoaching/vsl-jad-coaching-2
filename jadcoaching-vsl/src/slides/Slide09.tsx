@@ -36,15 +36,16 @@ export const Slide09: React.FC = () => {
           style={{
             fontSize: 52,
             fontWeight: 500,
-            color: theme.colors.primary,
+            color: theme.colors.textWhite,
             textAlign: 'center',
             lineHeight: 1.5,
-            textShadow: theme.shadows.textGlow,
           }}
         >
           Tu arrives le jour J avec confiance
           <br />
-          et tu réussis sans stress.
+          et tu{' '}
+          <span style={{ color: theme.colors.primary, textShadow: theme.shadows.textGlow }}>réussis</span>
+          {' '}sans stress.
         </AnimatedText>
       </AbsoluteFill>
     </SlideWrapper>

@@ -1,46 +1,34 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig } from 'remotion';
+import { AbsoluteFill } from 'remotion';
 import { SlideWrapper } from '../components/SlideWrapper';
 import { AnimatedText } from '../components/AnimatedText';
+import { AnimatedSymbol, createSymbolStagger } from '../components/AnimatedSymbol';
 import { theme } from '../styles/theme';
 
 export const Slide02: React.FC = () => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  // Symbol configuration with depth layers
+  const symbolsConfig = [
+    // Far layer (background, smaller, subtle blur)
+    { symbol: '∂', x: -600, y: -280, depth: 'far' as const },
+    { symbol: '≈', x: 580, y: -250, depth: 'far' as const },
+    { symbol: '∝', x: -520, y: 320, depth: 'far' as const },
+    { symbol: 'θ', x: 620, y: 280, depth: 'far' as const },
 
-  // Floating animation for math symbols
-  const float1 = Math.sin(frame / 15) * 8;
-  const float2 = Math.sin(frame / 12 + 1) * 10;
-  const float3 = Math.sin(frame / 18 + 2) * 6;
-  const float4 = Math.sin(frame / 14 + 3) * 9;
-  const float5 = Math.sin(frame / 16 + 4) * 7;
+    // Mid layer (medium size, sharp)
+    { symbol: '∑', x: -480, y: -180, depth: 'mid' as const, curvedEntry: true },
+    { symbol: 'π', x: 450, y: -160, depth: 'mid' as const },
+    { symbol: '√', x: -420, y: 220, depth: 'mid' as const },
+    { symbol: 'μ', x: 500, y: 180, depth: 'mid' as const, curvedEntry: true },
 
-  // Staggered appearance for each symbol
-  const getSymbolOpacity = (delay: number) => {
-    return interpolate(frame, [30 + delay, 50 + delay], [0, 0.7], {
-      extrapolateLeft: 'clamp',
-      extrapolateRight: 'clamp',
-    });
-  };
-
-  const getSymbolScale = (delay: number) => {
-    return spring({
-      frame: frame - (30 + delay),
-      fps,
-      config: { damping: 12, stiffness: 100 },
-    });
-  };
-
-  const mathSymbols = [
-    { symbol: '∑', x: -520, y: -220, size: 75, float: float1, delay: 0 },
-    { symbol: 'π', x: 500, y: -180, size: 60, float: float2, delay: 3 },
-    { symbol: '√', x: -480, y: 250, size: 65, float: float3, delay: 6 },
-    { symbol: 'μ', x: 530, y: 200, size: 70, float: float4, delay: 9 },
-    { symbol: '∫', x: -300, y: 300, size: 85, float: float2, delay: 12 },
-    { symbol: 'σ', x: 380, y: -280, size: 65, float: float1, delay: 15 },
-    { symbol: 'lim', x: -550, y: 50, size: 45, float: float5, delay: 18 },
-    { symbol: 'λ', x: 480, y: 320, size: 60, float: float3, delay: 21 },
+    // Near layer (foreground, larger, prominent)
+    { symbol: '∫', x: -350, y: 280, depth: 'near' as const, curvedEntry: true },
+    { symbol: 'σ', x: 380, y: -220, depth: 'near' as const },
+    { symbol: 'lim', x: -550, y: 60, depth: 'mid' as const },
+    { symbol: 'λ', x: 520, y: 300, depth: 'near' as const, curvedEntry: true },
   ];
+
+  // Create staggered animation with base delay and interval
+  const symbols = createSymbolStagger(symbolsConfig, 30, 5);
 
   return (
     <SlideWrapper variant="soft">
@@ -53,25 +41,17 @@ export const Slide02: React.FC = () => {
           padding: 80,
         }}
       >
-        {/* Math symbols background */}
-        {mathSymbols.map((item, index) => (
-          <div
+        {/* Animated symbols with cinematic appearance */}
+        {symbols.map((item, index) => (
+          <AnimatedSymbol
             key={index}
-            style={{
-              position: 'absolute',
-              left: '50%',
-              top: '50%',
-              transform: `translate(calc(-50% + ${item.x}px), calc(-50% + ${item.y + item.float}px)) scale(${getSymbolScale(item.delay)})`,
-              fontSize: item.size,
-              fontWeight: 300,
-              color: theme.colors.primary,
-              opacity: getSymbolOpacity(item.delay),
-              textShadow: theme.shadows.textGlow,
-              fontFamily: 'serif',
-            }}
-          >
-            {item.symbol}
-          </div>
+            symbol={item.symbol}
+            x={item.x}
+            y={item.y}
+            delay={item.delay}
+            depth={item.depth}
+            curvedEntry={item.curvedEntry}
+          />
         ))}
 
         <AnimatedText
