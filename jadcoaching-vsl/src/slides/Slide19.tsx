@@ -11,6 +11,12 @@ export const Slide19: React.FC = () => {
     extrapolateRight: 'clamp',
   });
 
+  const iconOpacity = interpolate(frame, [0, 20], [0, 1], {
+    extrapolateRight: 'clamp',
+  });
+
+  const glowPulse = Math.sin(frame / 20) * 0.2 + 0.8;
+
   return (
     <SlideWrapper variant="dark">
       <AbsoluteFill
@@ -22,14 +28,20 @@ export const Slide19: React.FC = () => {
           padding: 100,
         }}
       >
+        {/* Premium Target Icon */}
         <div
           style={{
-            fontSize: 80,
             transform: `scale(${iconScale})`,
+            opacity: iconOpacity,
             marginBottom: 40,
+            filter: `drop-shadow(0 0 ${20 * glowPulse}px rgba(0, 207, 255, 0.5))`,
           }}
         >
-          🎯
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke={theme.colors.primary} strokeWidth="1.5" />
+            <circle cx="12" cy="12" r="6" stroke={theme.colors.primary} strokeWidth="1.5" />
+            <circle cx="12" cy="12" r="2" fill={theme.colors.primary} />
+          </svg>
         </div>
 
         <AnimatedText
@@ -42,6 +54,7 @@ export const Slide19: React.FC = () => {
             textTransform: 'uppercase',
             letterSpacing: 4,
             marginBottom: 20,
+            textShadow: theme.shadows.textGlow,
           }}
         >
           Étape 2

@@ -11,6 +11,18 @@ export const Slide21: React.FC = () => {
     extrapolateRight: 'clamp',
   });
 
+  const iconOpacity = interpolate(frame, [0, 20], [0, 1], {
+    extrapolateRight: 'clamp',
+  });
+
+  const glowPulse = Math.sin(frame / 20) * 0.2 + 0.8;
+
+  // Shine effect
+  const shine = interpolate(frame, [25, 60], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+
   return (
     <SlideWrapper variant="dark">
       <AbsoluteFill
@@ -22,14 +34,65 @@ export const Slide21: React.FC = () => {
           padding: 100,
         }}
       >
+        {/* Premium Trophy/Award Icon */}
         <div
           style={{
-            fontSize: 80,
             transform: `scale(${iconScale})`,
+            opacity: iconOpacity,
             marginBottom: 40,
+            filter: `drop-shadow(0 0 ${25 * glowPulse}px rgba(0, 207, 255, 0.6))`,
           }}
         >
-          🏆
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M6 9H4.5a2.5 2.5 0 010-5H6"
+              stroke={theme.colors.primary}
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M18 9h1.5a2.5 2.5 0 000-5H18"
+              stroke={theme.colors.primary}
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M4 22h16"
+              stroke={theme.colors.primary}
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"
+              stroke={theme.colors.primary}
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"
+              stroke={theme.colors.primary}
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M18 2H6v7a6 6 0 1012 0V2z"
+              stroke={theme.colors.primary}
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill={`rgba(0, 207, 255, ${0.1 * shine})`}
+            />
+            <path
+              d="M12 8l1.5 1.5L12 11l-1.5-1.5L12 8z"
+              fill={theme.colors.primary}
+              opacity={shine}
+            />
+          </svg>
         </div>
 
         <AnimatedText
@@ -42,6 +105,7 @@ export const Slide21: React.FC = () => {
             textTransform: 'uppercase',
             letterSpacing: 4,
             marginBottom: 20,
+            textShadow: theme.shadows.textGlow,
           }}
         >
           Étape 4
