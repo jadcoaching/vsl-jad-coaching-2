@@ -49,7 +49,7 @@ export const Slide05: React.FC = () => {
             marginTop: 60,
           }}
         >
-          Comment ça fonctionne ?
+          3 éléments
         </AnimatedText>
       </AbsoluteFill>
     </SlideWrapper>

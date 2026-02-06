@@ -33,13 +33,13 @@ const SLIDE_CONFIG = [
   { component: Slide02, duration: SLIDE_DURATION },    // Tu GALÈRES en maths ou en stats ?
   { component: Slide03, duration: SLIDE_DURATION },    // Le problème ce n'est pas ton niveau
   { component: Slide04, duration: SLIDE_DURATION },    // Je vais te faire réussir
-  { component: Slide05, duration: SLIDE_DURATION },    // Comment ça fonctionne ?
+  { component: Slide10, duration: SLIDE_DURATION },    // Jad, Diplômé EPFL
+  { component: Slide11, duration: SLIDE_DURATION },    // Plus de 1254 étudiants
+  { component: Slide05, duration: SLIDE_DURATION },    // 3 éléments
   { component: Slide06, duration: SLIDE_DURATION },    // #1 Débloque les concepts
   { component: Slide07, duration: SLIDE_DURATION },    // #2 Développe une méthode
   { component: Slide08, duration: SLIDE_DURATION },    // #3 Travaille sur ce qui tombe
   { component: Slide09, duration: SLIDE_DURATION },    // Comment je peux te promettre
-  { component: Slide10, duration: SLIDE_DURATION },    // Jad, Diplômé EPFL
-  { component: Slide11, duration: SLIDE_DURATION },    // Plus de 1254 étudiants
   { component: Slide12, duration: SLIDE_DURATION },    // Témoignage Lou
   { component: Slide13, duration: SLIDE_DURATION },    // Témoignage Stan
   { component: Slide14, duration: SLIDE_DURATION },    // Témoignage Elisa
