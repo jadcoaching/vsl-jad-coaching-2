@@ -37,7 +37,8 @@ export const Slide24: React.FC = () => {
           >
             Coaching
           </span>
-          {' '}fonctionne vraiment
+          <br />
+          fonctionne vraiment
         </AnimatedText>
 
         <AnimatedText
