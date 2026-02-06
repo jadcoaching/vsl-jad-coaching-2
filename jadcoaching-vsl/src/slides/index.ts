@@ -20,3 +20,4 @@ export { Slide19 } from './Slide19';
 export { Slide20 } from './Slide20';
 export { Slide21 } from './Slide21';
 export { Slide22 } from './Slide22';
+export { Slide23 } from './Slide23';
