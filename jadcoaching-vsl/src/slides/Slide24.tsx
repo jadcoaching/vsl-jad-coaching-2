@@ -55,7 +55,9 @@ export const Slide24: React.FC = () => {
         >
           La différence entre être guidé…
           <br />
-          et savoir résoudre seul le jour de l'examen.
+          et savoir résoudre seul
+          <br />
+          le jour de l'examen.
         </AnimatedText>
       </AbsoluteFill>
     </SlideWrapper>
