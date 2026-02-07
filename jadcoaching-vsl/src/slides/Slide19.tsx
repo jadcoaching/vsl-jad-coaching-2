@@ -96,12 +96,10 @@ export const Slide19: React.FC = () => {
             color: theme.colors.textGray,
             textAlign: 'center',
             lineHeight: 1.6,
-            maxWidth: 1000,
+            maxWidth: 1100,
           }}
         >
-          Si je peux t'aider, je te propose un accompagnement sur-mesure
-          <br />
-          adapté à ton cours et ton examen.
+          Si je peux t'aider, je te propose un accompagnement sur-mesure adapté à ton cours et ton examen.
         </AnimatedText>
       </AbsoluteFill>
     </SlideWrapper>
