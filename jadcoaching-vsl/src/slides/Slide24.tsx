@@ -45,7 +45,7 @@ export const Slide24: React.FC = () => {
           delay={25}
           animation="fadeIn"
           style={{
-            fontSize: 32,
+            fontSize: 40,
             fontWeight: 400,
             color: theme.colors.textGray,
             textAlign: 'center',
@@ -53,11 +53,9 @@ export const Slide24: React.FC = () => {
             lineHeight: 1.5,
           }}
         >
-          La différence entre être guidé…
+          La différence entre être guidé
           <br />
-          et savoir résoudre seul
-          <br />
-          le jour de l'examen.
+          et savoir résoudre seul le jour de l'examen.
         </AnimatedText>
       </AbsoluteFill>
     </SlideWrapper>

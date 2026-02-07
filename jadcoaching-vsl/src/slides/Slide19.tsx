@@ -28,7 +28,7 @@ export const Slide19: React.FC = () => {
           padding: 100,
         }}
       >
-        {/* Premium Target Icon */}
+        {/* Premium Student with Professor Icon */}
         <div
           style={{
             transform: `scale(${iconScale})`,
@@ -37,10 +37,23 @@ export const Slide19: React.FC = () => {
             filter: `drop-shadow(0 0 ${20 * glowPulse}px rgba(0, 207, 255, 0.5))`,
           }}
         >
-          <svg width="100" height="100" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="10" stroke={theme.colors.primary} strokeWidth="1.5" />
-            <circle cx="12" cy="12" r="6" stroke={theme.colors.primary} strokeWidth="1.5" />
-            <circle cx="12" cy="12" r="2" fill={theme.colors.primary} />
+          <svg width="140" height="100" viewBox="0 0 28 24" fill="none">
+            {/* Professor (left, larger) */}
+            <circle cx="7" cy="4" r="3" stroke={theme.colors.primary} strokeWidth="1.5" />
+            <path
+              d="M1 20c0-3.314 2.686-6 6-6s6 2.686 6 6"
+              stroke={theme.colors.primary}
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+            {/* Student (right, smaller) */}
+            <circle cx="20" cy="7" r="2" stroke={theme.colors.primary} strokeWidth="1.5" />
+            <path
+              d="M15.5 20c0-2.485 2.015-4.5 4.5-4.5s4.5 2.015 4.5 4.5"
+              stroke={theme.colors.primary}
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
           </svg>
         </div>
 

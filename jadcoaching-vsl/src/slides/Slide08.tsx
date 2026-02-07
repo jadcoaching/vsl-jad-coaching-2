@@ -25,7 +25,7 @@ export const Slide08: React.FC = () => {
         <div
           style={{
             display: 'flex',
-            alignItems: 'flex-start',
+            alignItems: 'center',
             gap: 60,
             maxWidth: 1400,
           }}
@@ -51,7 +51,6 @@ export const Slide08: React.FC = () => {
               fontWeight: 500,
               color: theme.colors.textWhite,
               lineHeight: 1.4,
-              paddingTop: 40,
             }}
           >
             Travaille exactement sur

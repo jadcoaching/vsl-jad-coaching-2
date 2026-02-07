@@ -21,7 +21,6 @@ import {
   Slide17,
   Slide18,
   Slide19,
-  Slide20,
   Slide21,
   Slide22,
   Slide23,
@@ -56,8 +55,7 @@ const SLIDE_CONFIG = [
   { component: Slide17, duration: SLIDE_DURATION },    // Accompagnement + Comment ça fonctionne ?
   { component: Slide18, duration: SLIDE_DURATION },    // Étape 1 - Appel découverte
   { component: Slide19, duration: SLIDE_DURATION },    // Étape 2 - Accompagnement personnalisé
-  { component: Slide20, duration: SLIDE_DURATION },    // Étape 3 - On travaille ensemble
-  { component: Slide21, duration: SLIDE_DURATION },    // Étape 4 - Tu réussis
+  { component: Slide21, duration: SLIDE_DURATION },    // Étape 3 - Tu réussis
   { component: Slide22, duration: SLIDE_DURATION },    // Réserve ton appel
 ];
 

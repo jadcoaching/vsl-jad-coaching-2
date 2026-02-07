@@ -86,7 +86,7 @@ export const Slide21: React.FC = () => {
             textShadow: theme.shadows.textGlow,
           }}
         >
-          Étape 4
+          Étape 3
         </AnimatedText>
 
         <AnimatedText
