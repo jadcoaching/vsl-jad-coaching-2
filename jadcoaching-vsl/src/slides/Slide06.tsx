@@ -51,6 +51,7 @@ export const Slide06: React.FC = () => {
               fontWeight: 500,
               color: theme.colors.textWhite,
               lineHeight: 1.4,
+              marginTop: -20,
             }}
           >
             Débloque les concepts complexes

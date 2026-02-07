@@ -45,11 +45,11 @@ export const Slide24: React.FC = () => {
           delay={25}
           animation="fadeIn"
           style={{
-            fontSize: 40,
+            fontSize: 48,
             fontWeight: 400,
             color: theme.colors.textGray,
             textAlign: 'center',
-            maxWidth: 1000,
+            maxWidth: 1100,
             lineHeight: 1.5,
           }}
         >
