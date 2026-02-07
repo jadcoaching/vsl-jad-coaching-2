@@ -53,7 +53,9 @@ export const Slide24: React.FC = () => {
             lineHeight: 1.5,
           }}
         >
-          La différence entre être guidé… et savoir résoudre seul le jour de l'examen.
+          La différence entre être guidé…
+          <br />
+          et savoir résoudre seul le jour de l'examen.
         </AnimatedText>
       </AbsoluteFill>
     </SlideWrapper>

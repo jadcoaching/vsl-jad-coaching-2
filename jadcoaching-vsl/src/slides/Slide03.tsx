@@ -31,14 +31,17 @@ export const Slide03: React.FC = () => {
           delay={0}
           animation="fadeUp"
           style={{
-            fontSize: 72,
+            fontSize: 100,
             fontWeight: 600,
             color: theme.colors.textWhite,
             textAlign: 'center',
+            lineHeight: 1.3,
             marginBottom: 50,
           }}
         >
-          Le problème ce n'est pas ton niveau.
+          Le problème ce n'est pas
+          <br />
+          ton niveau.
         </AnimatedText>
 
         <div
