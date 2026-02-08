@@ -1,0 +1,21 @@
+{
+  "name": "vsl-jad-coaching-2",
+  "version": "1.0.0",
+  "description": "JadCoaching VSL Video Project",
+  "private": true,
+  "scripts": {
+    "postinstall": "cd jadcoaching-vsl && npm install",
+    "start": "cd jadcoaching-vsl && npm start",
+    "build": "cd jadcoaching-vsl && npm run build",
+    "render": "cd jadcoaching-vsl && npm run render",
+    "preview": "cd jadcoaching-vsl && npm run preview"
+  },
+  "keywords": [
+    "remotion",
+    "video",
+    "vsl",
+    "jadcoaching"
+  ],
+  "author": "JadCoaching",
+  "license": "ISC"
+}
