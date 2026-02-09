@@ -51,7 +51,7 @@ export const Slide07: React.FC = () => {
               fontWeight: 500,
               color: theme.colors.textWhite,
               lineHeight: 1.4,
-              marginTop: -35,
+              marginTop: -15,
             }}
           >
             Développe une méthode claire pour

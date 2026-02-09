@@ -17,12 +17,6 @@ export const Slide22: React.FC = () => {
 
   const glowPulse = Math.sin(frame / 20) * 0.2 + 0.8;
 
-  // Checkmark animation
-  const checkProgress = interpolate(frame, [30, 50], [0, 1], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
-
   const arrowBounce = interpolate(
     Math.sin(frame / 10),
     [-1, 1],
@@ -40,43 +34,18 @@ export const Slide22: React.FC = () => {
           padding: 100,
         }}
       >
-        {/* Document with Checkmark Icon */}
+        {/* Arrow Icon */}
         <div
           style={{
             transform: `scale(${iconScale})`,
             opacity: iconOpacity,
             marginBottom: 40,
             filter: `drop-shadow(0 0 ${25 * glowPulse}px rgba(0, 207, 255, 0.6))`,
+            fontSize: 100,
+            color: theme.colors.primary,
           }}
         >
-          <svg width="100" height="100" viewBox="0 0 24 24" fill="none">
-            {/* Document */}
-            <path
-              d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"
-              stroke={theme.colors.primary}
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            {/* Folded corner */}
-            <path
-              d="M14 2v6h6"
-              stroke={theme.colors.primary}
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            {/* Checkmark */}
-            <path
-              d="M9 15l2 2 4-4"
-              stroke={theme.colors.primary}
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeDasharray={10}
-              strokeDashoffset={10 * (1 - checkProgress)}
-            />
-          </svg>
+          →
         </div>
 
         <AnimatedText
